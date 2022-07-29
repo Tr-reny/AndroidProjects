@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "883736186753",
+    "firebase_url": "https://etown-graphi.firebaseio.com",
+    "project_id": "etown-graphi",
+    "storage_bucket": "etown-graphi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883736186753:android:b78f245c21864a01b62280",
+        "android_client_info": {
+          "package_name": "com.tr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883736186753-tf47bmf298m36papo7jl8qa2qdv00cg7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc94rwiA1Wcd5evA91yleDYVdlccqjAOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883736186753-tf47bmf298m36papo7jl8qa2qdv00cg7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883736186753:android:3fa1c8e9b8fbe2b6b62280",
+        "android_client_info": {
+          "package_name": "com.tr_reny.realtimerecyleview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883736186753-tf47bmf298m36papo7jl8qa2qdv00cg7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc94rwiA1Wcd5evA91yleDYVdlccqjAOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883736186753-tf47bmf298m36papo7jl8qa2qdv00cg7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
