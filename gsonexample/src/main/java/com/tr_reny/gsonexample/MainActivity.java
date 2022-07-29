@@ -20,6 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         //creating Json in String Form
         String json = "{\"firstname\":\"John\",\"age\":30,\"mail\":\"john@gmail.com\"}";
-        Employee employee = gson.fromJson(json, Employee.class);
+        Employee employee = gson.fromJson(json,  Employee.class);
     }
 }
