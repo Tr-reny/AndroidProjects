@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="gsonexample/src/main/res/layout/activity_main.xml" value="0.1703125" />
+        <entry key="realtimerecyleview/src/main/res/layout/activity_userlist.xml" value="0.1859375" />
+        <entry key="realtimerecyleview/src/main/res/layout/item.xml" value="0.22" />
       </map>
     </option>
   </component>
