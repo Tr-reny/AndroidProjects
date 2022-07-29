@@ -1,6 +1,6 @@
 package com.tr_reny.realtimerecyleview;
 
-public class user {
+public class User {
     String firstName, lastName, age;
 
     public String getFirstName() {
