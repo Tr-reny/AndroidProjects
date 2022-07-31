@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray jsonArray = response.getJSONArray("Employees");
-                            for (int i=0; i<jsonArray.length(); i++){
-                            JSONObject employee = jsonArray.getJSONObject(i);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject employee = jsonArray.getJSONObject(i);
                                 String firstname = employee.getString("firstName");
                                 String lastname = employee.getString("lastName");
                                 String emailAddress = employee.getString("emailAddress");
