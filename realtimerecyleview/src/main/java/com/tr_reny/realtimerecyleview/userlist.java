@@ -14,6 +14,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+/**
+ * Created by Reny Kipkoech on 29/07/2022 01:00 hours EAT
+ * This App Uses Firebase realtime DataBase
+ * It access the Firebase Database and Displays it Using RecyclerView
+ * */
 
 public class userlist extends AppCompatActivity {
 
