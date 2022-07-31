@@ -28,7 +28,7 @@ public class userlist extends AppCompatActivity {
         setContentView(R.layout.activity_userlist);
 
         recyclerView = findViewById(R.id.userlist);
-        database = FirebaseDatabase.getInstance().getReference("");
+        database = FirebaseDatabase.getInstance().getReference("https://etown-graphi.firebaseio.com/");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RealtimeRecyleView</string>
+    <string name="firebase_user_url">https://etown-graphi.firebaseio.com/</string>
 </resources>
