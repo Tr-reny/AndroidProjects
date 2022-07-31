@@ -17,7 +17,10 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+/**
+* Created By Reny Kipkoech on 31st Jul 2022
+ * This Program Parses JSONObject
+* */
 public class MainActivity extends AppCompatActivity {
     TextView txtViewResults;
     RequestQueue mQueue;
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void jsonParse() {
-        //link o json
+        //link to json
         String url = "https://jsonkeeper.com/b/GBWQ";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
