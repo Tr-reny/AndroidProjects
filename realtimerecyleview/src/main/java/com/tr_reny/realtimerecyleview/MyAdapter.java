@@ -33,7 +33,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         User user = list.get(position);
         holder.firstName.setText(user.getFirstName());
         holder.lastName.setText(user.getFirstName());
-        holder.lastName.setText(user.getAge());
+        holder.age.setText(user.getAge());
+
 
     }
 
