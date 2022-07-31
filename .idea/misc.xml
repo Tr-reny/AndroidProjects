@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="SimpleJSON/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="gsonexample/src/main/res/layout/activity_main.xml" value="0.1703125" />
         <entry key="realtimerecyleview/src/main/res/layout/activity_main.xml" value="0.1859375" />
