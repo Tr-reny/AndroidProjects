@@ -1,8 +1,11 @@
 package com.tr_reny.realtimerecyleview;
 
 public class User {
-    String firstName, lastName, age,emailAddress;
+    String preferredFullName, firstName, lastName, age,emailAddress;
 
+    public String getPreferredFullName(){
+        return preferredFullName;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -14,7 +17,7 @@ public class User {
     public String getAge() {
         return age;
     }
-    public String getEmail() {
+    public String getEmailAddress() {
         return emailAddress;
     }
 }

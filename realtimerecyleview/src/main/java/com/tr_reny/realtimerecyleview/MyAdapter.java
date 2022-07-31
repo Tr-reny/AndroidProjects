@@ -34,8 +34,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.firstName.setText(user.getFirstName());
         holder.lastName.setText(user.getLastName());
         holder.age.setText(user.getAge());
-        holder.emailAddress.setText(user.getEmail());
-
+        holder.emailAddress.setText(user.getEmailAddress());
+        holder.username.setText(user.getPreferredFullName());
 
     }
 
@@ -45,11 +45,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView firstName, lastName, age, emailAddress;
+        TextView username, firstName, lastName, age, emailAddress;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            username = itemView.findViewById(R.id.tvUserName);
             firstName = itemView.findViewById(R.id.tvfirstName);
             lastName = itemView.findViewById(R.id.tvlastName);
             age = itemView.findViewById(R.id.tvage);
