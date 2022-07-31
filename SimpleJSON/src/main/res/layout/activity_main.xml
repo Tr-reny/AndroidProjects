@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textColor="@color/black"
+        android:textSize="20sp"
         android:layout_above="@+id/btnParse"
         android:layout_marginBottom="4dp" />
 
