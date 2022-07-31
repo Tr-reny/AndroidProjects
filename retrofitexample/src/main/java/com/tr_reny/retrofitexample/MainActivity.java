@@ -42,6 +42,19 @@ public class MainActivity extends AppCompatActivity {
 
                 List<Post> posts = response.body();
 
+                for (Post post : posts) {
+                    String content ="";
+                    content += "ID: " + post.getId() + "\n";
+                    content += "User ID: " + post.getUserId() + "\n";
+                    content += "Title: " + post.getTitle() + "\n";
+                    content += "Text: " + post.getText() + "\n\n";
+
+                    textViewResults.append(content);
+
+
+
+                }
+
             }
 
             @Override
