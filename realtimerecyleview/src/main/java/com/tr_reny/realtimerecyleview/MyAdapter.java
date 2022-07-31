@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView firstName, lastName, age;
+        TextView firstName, lastName, age, email;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,6 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             firstName = itemView.findViewById(R.id.tvfirstName);
             lastName = itemView.findViewById(R.id.tvlastName);
             age = itemView.findViewById(R.id.tvage);
+            email = itemView.findViewById(R.id.email);
         }
     }
 }
