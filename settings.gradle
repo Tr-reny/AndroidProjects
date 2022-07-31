@@ -16,3 +16,4 @@ rootProject.name = "Android Projects"
 include ':app'
 include ':gsonexample'
 include ':realtimerecyleview'
+include ':SimpleJSON'
