@@ -7,16 +7,28 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:layout_centerInParent="true"
         android:text="FireBase Access DB"
         android:textColor="@color/black"
         android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btnTest"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:text="realTimeDB Test"
+        android:layout_marginTop="8dp"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>
