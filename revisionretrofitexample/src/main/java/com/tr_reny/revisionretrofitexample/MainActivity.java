@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     content += "Name: " + marvel.getName() + "\n";
                     content += "RealName: " + marvel.getRealname() + "\n";
                     content += "Team: " + marvel.getTeam() + "\n";
-                    content += "FirstAppearance" + marvel.getFirstappearance() + "\n\n";
+                    content += "FirstAppearance: " + marvel.getFirstappearance() + "\n\n";
 
                     textViewResults.append(content);
                 }
