@@ -8,6 +8,6 @@ import retrofit2.http.GET;
 public interface JsonPlaceHolderApi {
 
     //this Service Request the relative link
-    @GET("posts")
+    @GET("posts") //annotate method
     Call<List<Post>> getPost();
 }
