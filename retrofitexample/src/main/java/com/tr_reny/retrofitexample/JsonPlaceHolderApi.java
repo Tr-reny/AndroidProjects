@@ -11,8 +11,7 @@ public interface JsonPlaceHolderApi {
 
     //this Service Request the relative link
     @GET("posts") //annotate method
-    Call<List<Post>> getPost(@Query("userId") Integer userId,
-                             @Query("userId") Integer userId2,
+    Call<List<Post>> getPost(@Query("userId") Integer[] userId,
                              @Query("_sort") String sort,
                              @Query("_order") String order
                              );
