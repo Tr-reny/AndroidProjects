@@ -14,6 +14,7 @@
         <TextView
             android:id="@+id/txtResults"
             android:layout_width="match_parent"
+            android:textSize="18sp"
             android:layout_height="match_parent"
             android:textColor="@color/black" />
 

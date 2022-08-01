@@ -1,6 +1,6 @@
 package com.tr_reny.revisionretrofitexample;
 
-public class marvel {
+public class Marvel {
     private String name;
     private String realname;
     private String team;
