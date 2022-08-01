@@ -75,23 +75,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getComment(){
-        Call<List<Comments>> call = jsonPlaceHolderApi.getComments();
+        Call<List<Comment>> call = jsonPlaceHolderApi.getComments();
 
-        call.enqueue(new Callback<List<Comments>>() {
+        call.enqueue(new Callback<List<Comment>>() {
             @Override
-            public void onResponse(Call<List<Comments>> call, Response<List<Comments>> response) {
+            public void onResponse(Call<List<Comment>> call, Response<List<Comment>> response) {
 
                 if(!response.isSuccessful()){
                     textViewResults.setText("Code: " + response.code());
+                    return;
                 }
 
             }
 
             @Override
-            public void onFailure(Call<List<Comments>> call, Throwable t) {
+            public void onFailure(Call<List<Comment>> call, Throwable t) {
                 textViewResults.setText(t.getMessage());
 
             }
         });
+
     }
 }

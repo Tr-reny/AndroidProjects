@@ -2,7 +2,7 @@ package com.tr_reny.retrofitexample;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Comments {
+public class Comment {
 private int postId;
 private int id;
 private String name;
