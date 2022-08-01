@@ -7,6 +7,7 @@ import retrofit2.http.GET;
 
 public interface JsonPlaceHolderApi {
 
+    //this Service Request the relative link
     @GET("posts")
     Call<List<Post>> getPost();
 }
