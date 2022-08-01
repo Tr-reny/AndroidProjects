@@ -10,4 +10,7 @@ public interface JsonPlaceHolderApi {
     //this Service Request the relative link
     @GET("posts") //annotate method
     Call<List<Post>> getPost();
+
+    @GET("posts/1/comments")
+    Call<List<Comments>> getComments();
 }

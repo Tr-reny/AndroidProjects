@@ -20,6 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textViewResults;
+    private JsonPlaceHolderApi jsonPlaceHolderApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+      jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+      //getPosts();
+        getComment();
+    }
 
+    private void getPosts(){
         Call<List<Post>> call = jsonPlaceHolderApi.getPost();
 
         call.enqueue(new Callback<List<Post>>() {
@@ -67,6 +72,26 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
 
+    private void getComment(){
+        Call<List<Comments>> call = jsonPlaceHolderApi.getComments();
+
+        call.enqueue(new Callback<List<Comments>>() {
+            @Override
+            public void onResponse(Call<List<Comments>> call, Response<List<Comments>> response) {
+
+                if(!response.isSuccessful()){
+                    textViewResults.setText("Code: " + response.code());
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Comments>> call, Throwable t) {
+                textViewResults.setText(t.getMessage());
+
+            }
+        });
     }
 }
