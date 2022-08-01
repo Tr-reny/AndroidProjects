@@ -11,6 +11,6 @@ public interface JsonPlaceHolderApi {
     @GET("posts") //annotate method
     Call<List<Post>> getPost();
 
-    @GET("posts/1/comments")
+    @GET("posts/2/comments")
     Call<List<Comment>> getComments();
 }

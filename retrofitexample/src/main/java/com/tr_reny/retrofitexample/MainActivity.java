@@ -85,6 +85,20 @@ public class MainActivity extends AppCompatActivity {
                     textViewResults.setText("Code: " + response.code());
                     return;
                 }
+                List<Comment> comments = response.body();
+
+                for (Comment comment : comments){
+                    String content = "";
+                    content += "ID: " + comment.getId() + "\n";
+                    content += "Post Id: " + comment.getPostId() + "\n";
+                    content += "Name: " + comment.getName() + "\n";
+                    content += "Email: " + comment.getEmail() + "\n";
+                    content += "Text: " + comment.getText() + "\n\n";
+
+                    textViewResults.append(content);
+
+
+                }
 
             }
 
