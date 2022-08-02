@@ -7,5 +7,5 @@ import retrofit2.http.GET;
 
 public interface MovieInterfaceAPI {
     @GET("marvel")
-    Call<List<Marvel>> getMoview();
+    Call<List<Marvel>> getMarvels();
 }
