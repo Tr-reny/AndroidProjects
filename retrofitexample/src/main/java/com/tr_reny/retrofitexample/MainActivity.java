@@ -35,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-      jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 //        getPosts();
 //        getComment();
         createPost();
     }
 
-    private void getPosts(){
+    private void getPosts() {
         Map<String, String> parameters = new HashMap<>();
         parameters.put("userId", "1");
         parameters.put("_sort", "id");
@@ -82,20 +82,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void getComment(){
+    private void getComment() {
         Call<List<Comment>> call = jsonPlaceHolderApi.getComments(3);
 
         call.enqueue(new Callback<List<Comment>>() {
             @Override
             public void onResponse(Call<List<Comment>> call, Response<List<Comment>> response) {
 
-                if(!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     textViewResults.setText("Code: " + response.code());
                     return;
                 }
                 List<Comment> comments = response.body();
 
-                for (Comment comment : comments){
+                for (Comment comment : comments) {
                     String content = "";
                     content += "ID: " + comment.getId() + "\n";
                     content += "Post Id: " + comment.getPostId() + "\n";
@@ -120,38 +120,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    private void createPost(){
-        Post post = new Post(23,"New Title", "New Text");
+    private void createPost() {
+        Post post = new Post(23, "New Title", "New Text");
 
         Call<Post> call = jsonPlaceHolderApi.createPost(post);
-                call.enqueue(new Callback<Post>() {
-                    @Override
-                    public void onResponse(Call<Post> call, Response<Post> response) {
-                        if (!response.isSuccessful()){
-                            textViewResults.setText("Code: " + response.code());
-                            return;
-                        }
+        call.enqueue(new Callback<Post>() {
+            @Override
+            public void onResponse(Call<Post> call, Response<Post> response) {
+                if (!response.isSuccessful()) {
+                    textViewResults.setText("Code: " + response.code());
+                    return;
+                }
 
-                        Post postResponse = response.body();
-                        String content = "";
-                        content += "Code: " + response.code() + "\n";
-                        content += "ID: " + postResponse.getId() + "\n";
-                        content += "User ID: " + postResponse.getUserId() + "\n";
-                        content += "Title: " + postResponse.getTitle() + "\n";
-                        content += "Text: " + postResponse.getText() + "\n\n";
+                Post postResponse = response.body();
+                String content = "";
+                content += "Code: " + response.code() + "\n";
+                content += "ID: " + postResponse.getId() + "\n";
+                content += "User ID: " + postResponse.getUserId() + "\n";
+                content += "Title: " + postResponse.getTitle() + "\n";
+                content += "Text: " + postResponse.getText() + "\n\n";
 
-                        textViewResults.setText(content);
+                textViewResults.setText(content);
 
-                    }
+            }
 
-                    @Override
-                    public void onFailure(Call<Post> call, Throwable t) {
+            @Override
+            public void onFailure(Call<Post> call, Throwable t) {
 
-                        textViewResults.setText(t.getMessage());
+                textViewResults.setText(t.getMessage());
 
-                    }
-                });
+            }
+        });
 
     }
 
