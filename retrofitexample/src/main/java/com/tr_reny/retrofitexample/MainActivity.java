@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
       jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-      getPosts();
-      //  getComment();
+//        getPosts();
+//        getComment();
     }
 
     private void getPosts(){
