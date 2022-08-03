@@ -34,17 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
         textViewResults = findViewById(R.id.txtPost);
 
-        Gson gson = new GsonBuilder().serializeNulls().create();
+        Gson gson = new GsonBuilder().serializeNulls().create(); //used to force Post Overwrite
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create(gson)) //gson is called to execute the force overwrite
                 .build();
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 //        getPosts();
 //        getComment();
 //        createPost();
-        updatePost();
+//        updatePost();
+        deletePost();
     }
 
     private void getPosts() {
@@ -192,6 +193,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Post> call, Throwable t) {
+                textViewResults.setText(t.getMessage());
+
+            }
+        });
+    }
+
+
+    private void deletePost(){
+        Call<Void> call = jsonPlaceHolderApi.deletePost(5);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                textViewResults.setText("Code: " + response.code());
+
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
                 textViewResults.setText(t.getMessage());
 
             }
