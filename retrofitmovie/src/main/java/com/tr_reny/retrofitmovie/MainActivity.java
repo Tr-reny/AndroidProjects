@@ -1,9 +1,9 @@
 package com.tr_reny.retrofitmovie;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
@@ -20,16 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewResults=findViewById(R.id.textMarvelsResults);
+        textViewResults = findViewById(R.id.textMarvelsResults);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://www.simplifiedcoding.net/demos/")
+                .baseUrl("")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         MovieInterfaceAPI movieInterfaceAPI = retrofit.create(MovieInterfaceAPI.class);
-        Call<List<Marvel>> call = MovieInterfaceAPI.getMarvels();
-
 
     }
 }
