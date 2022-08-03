@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         createPost();
     }
 
-    private void getPosts()  {
+    private void getPosts() {
         Map<String, String> parameters = new HashMap<>();
         parameters.put("userId", "1");
         parameters.put("_sort", "id");
@@ -126,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
         Map<String, String> fields = new HashMap<>();
         fields.put("userId", "25");
         fields.put("title", "New Title 3");
-
 
         Call<Post> call = jsonPlaceHolderApi.createPost(fields);
         call.enqueue(new Callback<Post>() {
