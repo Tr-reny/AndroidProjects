@@ -123,7 +123,12 @@ public class MainActivity extends AppCompatActivity {
     private void createPost() {
         Post post = new Post(23, "New Title", "New Text");
 
-        Call<Post> call = jsonPlaceHolderApi.createPost(post);
+        Map<String, String> fields = new HashMap<>();
+        fields.put("userId", "25");
+        fields.put("title", "New Title 3");
+
+
+        Call<Post> call = jsonPlaceHolderApi.createPost(fields);
         call.enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {
