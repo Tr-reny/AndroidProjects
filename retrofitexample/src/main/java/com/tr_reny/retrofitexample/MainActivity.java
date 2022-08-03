@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         createPost();
     }
 
-    private void getPosts() {
+    private void getPosts()  {
         Map<String, String> parameters = new HashMap<>();
         parameters.put("userId", "1");
         parameters.put("_sort", "id");
