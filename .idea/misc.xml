@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.18981481481481483" />
         <entry key="SimpleJSON/src/main/res/layout/activity_main.xml" value="0.1859375" />
+        <entry key="advanceapi/src/main/res/layout/act_img_picker.xml" value="0.44375" />
+        <entry key="advanceapi/src/main/res/layout/activity_main.xml" value="0.44625" />
+        <entry key="advanceapi/src/main/res/layout/item_image.xml" value="0.44375" />
+        <entry key="advanceapi/src/main/res/menu/menu_unsplash_picker.xml" value="0.44375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="gsonexample/src/main/res/layout/activity_main.xml" value="0.1703125" />
         <entry key="realtimerecyleview/src/main/res/layout/activity_main.xml" value="0.1859375" />
