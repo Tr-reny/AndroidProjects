@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -26,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        recyclerView = findViewById(R.id.recylerView);
+        marvelList = new ArrayList<>();
 
         //textViewResults = findViewById(R.id.textMarvelsResults);
 
@@ -43,30 +46,42 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Marvel>> call, Response<List<Marvel>> response) {
                 if (!response.isSuccessful()){
-                    textViewResults.setText("Code: " + response.code());
+//                    recyclerView.setText("Code: " + response.code());
                     return;
                 }
 
                 List<Marvel> marvels = response.body();
                 for (Marvel marvel : marvels){
-                    String content = "";
+                  /*  String content = "";
                     content += "Name: " + marvel.getName() + "\n";
                     content += "RealName: " + marvel.getRealname() + "\n";
                     content += "Team: " + marvel.getTeam() + "\n";
                     content += "Bio: " + marvel.getBio() + "\n";
                     content += "ImageUrl: " + marvel.getImageurl() + "\n\n";
 
-                    textViewResults.append(content);
+                    textViewResults.append(content);*/
+
+                    marvelList.add(marvel);
                 }
+                PutDataIntoRecylerView(marvelList);
 
             }
 
             @Override
             public void onFailure(Call<List<Marvel>> call, Throwable t) {
-              textViewResults.setText(t.getMessage());
+//              recyclerView.setText(t.getMessage());
 
             }
         });
+
+    }
+
+    private void PutDataIntoRecylerView(List<Marvel> marvelList) {
+
+        MyAdapter myAdapter = new MyAdapter(this,marvelList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myAdapter);
+
 
     }
 }
