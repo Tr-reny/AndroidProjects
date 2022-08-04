@@ -20,14 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewResults = findViewById(R.id.textMarvelsResults);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        MovieInterfaceAPI movieInterfaceAPI = retrofit.create(MovieInterfaceAPI.class);
 
     }
 }
