@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         textViewResults = findViewById(R.id.textMarvelsResults);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://www.simplifiedcoding.net/demos/marvel/")
+                .baseUrl("https://www.simplifiedcoding.net/demos/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
                     content += "Name: " + marvel.getName() + "\n";
                     content += "RealName: " + marvel.getRealname() + "\n";
                     content += "Team: " + marvel.getTeam() + "\n";
-             /*       content += "Bio: " + marvel.getBio() + "\n";
-                    content += "ImageUrl: " + marvel.getImageurl() + "\n\n";*/
+                    content += "Bio: " + marvel.getBio() + "\n";
+                    content += "ImageUrl: " + marvel.getImageurl() + "\n\n";
 
                     textViewResults.append(content);
                 }
