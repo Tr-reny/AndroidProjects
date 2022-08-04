@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
@@ -40,11 +42,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
         //Adding Glide Library to display the images
 
+        Glide.with(mContext)
+                .load(marvelList.get(position).getImageurl())
+                .into(holder.imageViewUrl);
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return marvelList.size();
     }
 
     public static class  MyViewHolder extends RecyclerView.ViewHolder{

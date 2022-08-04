@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
@@ -15,14 +16,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewResults;
+    RecyclerView recyclerView;
+    List<Marvel> marvelList;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewResults = findViewById(R.id.textMarvelsResults);
+
+
+        //textViewResults = findViewById(R.id.textMarvelsResults);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.simplifiedcoding.net/demos/")
