@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 public interface SimplifiedCodingAPI {
 
     @GET("marvel")
-    Call<List<Marvel>> getMarvel();
+    Call<List<Marvel>> getMarvels();
 
 
 }
