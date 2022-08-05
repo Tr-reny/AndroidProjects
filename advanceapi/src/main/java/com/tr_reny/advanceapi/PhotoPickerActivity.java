@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.AppBarLayout;
+import com.tr_reny.advanceapi.PhotosAdapter.OnPhotoClickedListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,10 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/**
+ * Created by Reny Kipkoech on 04/08/2022 20:00 hours EAT
+ * This App Uses www.unsplash.com API to get images and display it in recycleView
+ * */
 public class PhotoPickerActivity extends AppCompatActivity {
 
     private int page = 1;
@@ -41,7 +45,7 @@ public class PhotoPickerActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
     PhotosAdapter adapter;
-    PhotosAdapter.OnPhotoClickedListener photoClickListener;
+    OnPhotoClickedListener photoClickListener;
 
     UnsplashInterface dataService;
 
@@ -75,13 +79,10 @@ public class PhotoPickerActivity extends AppCompatActivity {
             }
         });
 
-        photoClickListener = new PhotosAdapter.OnPhotoClickedListener() {
+        photoClickListener = new OnPhotoClickedListener() {
             @Override
             public void photoClicked(Photo photo, ImageView imageView) {
-                Intent intent = new Intent();
-                intent.putExtra("image", photo);
-                setResult(RESULT_OK, intent);
-                finish();
+
             }
         };
 
@@ -142,7 +143,7 @@ public class PhotoPickerActivity extends AppCompatActivity {
                             SearchResults results = response.body();
                             Log.d("Photos", "Total Results Found " + results.getTotal());
                             List<Photo> photos = results.getResults();
-                            adapter = new PhotosAdapter(photos, PhotoPickerActivity.this, photoClickListener);
+                            adapter = new PhotosAdapter((ArrayList<Photo>) photos, PhotoPickerActivity.this, photoClickListener);
                             recyclerView.setAdapter(adapter);
                             progressBar.setVisibility(View.GONE);
                         }

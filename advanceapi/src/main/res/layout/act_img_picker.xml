@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:theme="@style/MyToolbarStyle"
+            app:theme="@style/Theme.AndroidProjects"
             app:layout_scrollFlags="scroll|enterAlways" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -26,7 +26,7 @@
         android:id="@+id/searchLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/teal_200"
         android:elevation="3dp"
         android:visibility="gone">
 

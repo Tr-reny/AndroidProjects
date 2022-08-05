@@ -40,12 +40,15 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.ViewHolder
                 mListener.photoClicked(photoList.get(holder.getAdapterPosition()), (ImageView)v);
             }
         });
-
-//        Picasso.with(mContext)
-//                .load(photo.getUrls().getRegular())
-//                .resize(300, 300)
-//                .centerCrop()
-//                .into(holder.imageView);
+/*
+        this is where bugs are located
+        TODO
+                Picasso.with(mContext)
+                        .load(photo.getUrls().getRegular())
+                        .resize(300, 300)
+                        .centerCrop()
+                        .into(holder.imageView);
+        */
     }
 
     public void addPhotos(List<Photo> photos){
