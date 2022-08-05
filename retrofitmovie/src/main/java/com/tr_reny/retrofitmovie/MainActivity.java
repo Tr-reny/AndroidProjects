@@ -1,5 +1,7 @@
 package com.tr_reny.retrofitmovie;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<Marvel> marvelList;
-
+    private MyAdapter myAdapter;
 
 
     @Override
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recylerView);
+
         marvelList = new ArrayList<>();
 
         //textViewResults = findViewById(R.id.textMarvelsResults);
