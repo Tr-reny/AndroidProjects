@@ -30,21 +30,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
         View v;
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        v = layoutInflater.inflate(R.layout.marvel_item,parent,false);
+        v = layoutInflater.inflate(R.layout.item_list,parent,false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.name.setText(marvelList.get(position).getName());
-        holder.realName.setText(marvelList.get(position).getRealname());
-
-        //Adding Glide Library to display the images
-
-        Glide.with(mContext)
-                .load(marvelList.get(position).getImageurl())
-                .into(holder.imageViewUrl);
+//        holder.name.setText(marvelList.get(position).getName());
+//        holder.realName.setText(marvelList.get(position).getRealname());
+//
+//        //Adding Glide Library to display the images
+//
+//        Glide.with(mContext)
+//                .load(marvelList.get(position).getImageurl())
+//                .into(holder.imageViewUrl);
 
     }
 
@@ -62,9 +62,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.textViewName);
-            realName= itemView.findViewById(R.id.textViewRealName);
-            imageViewUrl = itemView.findViewById(R.id.imageViewUrl);
+//            name = itemView.findViewById(R.id.textViewName);
+//            realName= itemView.findViewById(R.id.textViewRealName);
+//            imageViewUrl = itemView.findViewById(R.id.imageViewUrl);
 
         }
     }
