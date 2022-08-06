@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<Marvel> marvelList;
-    private MyAdapter myAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -13,7 +13,6 @@ import java.util.List;
 // The adapter class which
 // extends RecyclerView Adapter
 public class Adapter extends RecyclerView.Adapter<Adapter.MyView> {
-
     // List with String type
     private List<String> list;
 
@@ -21,8 +20,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyView> {
     // extends RecyclerView.ViewHolder
     public class MyView
             extends RecyclerView.ViewHolder {
-
-        // Text View
+       // Text View
         TextView textView;
 
         // parameterised constructor for View Holder class
