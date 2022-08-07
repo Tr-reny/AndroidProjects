@@ -11,6 +11,6 @@
         android:id="@+id/recyclerViewHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="horizontal" />
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

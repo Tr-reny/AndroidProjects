@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
+public class MyAdapter<S, V, B> extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 private final RecyclerViewInterface recyclerViewInterface;
     private Context mContext;
     private List<Marvel>marvelList;
