@@ -13,7 +13,9 @@
         <entry key="gsonexample/src/main/res/layout/activity_main.xml" value="0.1703125" />
         <entry key="horizontalrecyclerview/src/main/res/layout/activity_main.xml" value="0.44625" />
         <entry key="horizontalrecyclerview/src/main/res/layout/item.xml" value="0.18489583333333334" />
+        <entry key="horizontalrv/src/main/res/layout/activity_item_description.xml" value="0.5577557755775577" />
         <entry key="horizontalrv/src/main/res/layout/activity_main.xml" value="0.44166666666666665" />
+        <entry key="horizontalrv/src/main/res/layout/item_full_description.xml" value="0.18489583333333334" />
         <entry key="horizontalrv/src/main/res/layout/item_list.xml" value="0.6625" />
         <entry key="realtimerecyleview/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="realtimerecyleview/src/main/res/layout/activity_userlist.xml" value="0.1859375" />
