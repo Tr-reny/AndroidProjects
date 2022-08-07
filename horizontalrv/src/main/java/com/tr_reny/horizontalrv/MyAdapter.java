@@ -1,11 +1,13 @@
 package com.tr_reny.horizontalrv;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,14 +39,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-//        holder.name.setText(marvelList.get(position).getName());
+        holder.name.setText(marvelList.get(position).getName());
 //        holder.realName.setText(marvelList.get(position).getRealname());
-//
-//        //Adding Glide Library to display the images
-//
-//        Glide.with(mContext)
-//                .load(marvelList.get(position).getImageurl())
-//                .into(holder.imageViewUrl);
+
+        //Adding Glide Library to display the images
+
+        Glide.with(mContext)
+                .load(marvelList.get(position).getImageurl())
+                .into(holder.imageViewUrl);
 
     }
 
@@ -62,9 +64,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-//            name = itemView.findViewById(R.id.textViewName);
+            name = itemView.findViewById(R.id.tvTitle);
 //            realName= itemView.findViewById(R.id.textViewRealName);
-//            imageViewUrl = itemView.findViewById(R.id.imageViewUrl);
+            imageViewUrl = itemView.findViewById(R.id.imageView);
 
         }
     }

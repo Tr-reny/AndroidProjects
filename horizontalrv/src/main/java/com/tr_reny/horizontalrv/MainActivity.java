@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager;
     List<Marvel> marvelList;
     SimplifiedCodingAPI simplifiedCodingAPI;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,23 +37,24 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-     simplifiedCodingAPI = retrofit.create(SimplifiedCodingAPI.class);
-     getMarvel();
+        simplifiedCodingAPI = retrofit.create(SimplifiedCodingAPI.class);
+        getMarvel();
 
     }
-private void getMarvel(){
-    Call<List<Marvel>> call = simplifiedCodingAPI.getMarvels();
 
-    call.enqueue(new Callback<List<Marvel>>() {
-        @Override
-        public void onResponse(Call<List<Marvel>> call, Response<List<Marvel>> response) {
-            if (!response.isSuccessful()){
+    private void getMarvel() {
+        Call<List<Marvel>> call = simplifiedCodingAPI.getMarvels();
+
+        call.enqueue(new Callback<List<Marvel>>() {
+            @Override
+            public void onResponse(Call<List<Marvel>> call, Response<List<Marvel>> response) {
+                if (!response.isSuccessful()) {
 //                    recyclerView.setText("Code: " + response.code());
-                return;
-            }
+                    return;
+                }
 
-            List<Marvel> marvels = response.body();
-            for (Marvel marvel : marvels){
+                List<Marvel> marvels = response.body();
+                for (Marvel marvel : marvels) {
                   /*  String content = "";
                     content += "Name: " + marvel.getName() + "\n";
                     content += "RealName: " + marvel.getRealname() + "\n";
@@ -62,26 +64,26 @@ private void getMarvel(){
 
                     textViewResults.append(content);*/
 
-                marvelList.add(marvel);
+                    marvelList.add(marvel);
+                }
+                PutDataIntoRecylerView(marvelList);
+
             }
-            PutDataIntoRecylerView(marvelList);
 
-        }
-
-        @Override
-        public void onFailure(Call<List<Marvel>> call, Throwable t) {
+            @Override
+            public void onFailure(Call<List<Marvel>> call, Throwable t) {
 //              recyclerView.setText(t.getMessage());
 
-        }
-    });
-}
+            }
+        });
+    }
 
 
     private void PutDataIntoRecylerView(List<Marvel> marvelList) {
 
-        linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-        MyAdapter myAdapter = new MyAdapter(this,marvelList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        MyAdapter myAdapter = new MyAdapter(this, marvelList);
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(myAdapter);
 
 
