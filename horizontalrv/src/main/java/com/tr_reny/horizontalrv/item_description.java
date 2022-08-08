@@ -44,6 +44,4 @@ public class item_description extends AppCompatActivity {
     }
 
 
-
-
 }

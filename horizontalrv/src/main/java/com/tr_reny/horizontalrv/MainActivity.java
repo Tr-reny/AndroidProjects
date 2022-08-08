@@ -16,7 +16,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements RecyclerViewInterface{
+public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
 
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     private void PutDataIntoRecylerView(List<Marvel> marvelList) {
 
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        MyAdapter myAdapter = new MyAdapter(this, marvelList,this);
+        MyAdapter myAdapter = new MyAdapter(this, marvelList, this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(myAdapter);
 
@@ -94,12 +94,12 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(MainActivity.this,item_description.class);
+        Intent intent = new Intent(MainActivity.this, item_description.class);
 
-        intent.putExtra("name",marvelList.get(position).getName());
-        intent.putExtra("realname",marvelList.get(position).getRealname());
+        intent.putExtra("name", marvelList.get(position).getName());
+        intent.putExtra("realname", marvelList.get(position).getRealname());
         intent.putExtra("imageurl", marvelList.get(position).getImageurl());
-        intent.putExtra("bio",marvelList.get(position).getBio());
+        intent.putExtra("bio", marvelList.get(position).getBio());
 
         startActivity(intent);
 

@@ -14,12 +14,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class MyAdapter<S, V, B> extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
-private final RecyclerViewInterface recyclerViewInterface;
+public class MyAdapter<S, V, B> extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+    private final RecyclerViewInterface recyclerViewInterface;
     private Context mContext;
-    private List<Marvel>marvelList;
+    private List<Marvel> marvelList;
 
-    public MyAdapter(Context mContext, List<Marvel> marvelList,RecyclerViewInterface recyclerViewInterface) {
+    public MyAdapter(Context mContext, List<Marvel> marvelList, RecyclerViewInterface recyclerViewInterface) {
         this.recyclerViewInterface = recyclerViewInterface;
         this.mContext = mContext;
         this.marvelList = marvelList;
@@ -31,8 +31,8 @@ private final RecyclerViewInterface recyclerViewInterface;
 
         View v;
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        v = layoutInflater.inflate(R.layout.item_list,parent,false);
-        return new MyViewHolder(v,recyclerViewInterface);
+        v = layoutInflater.inflate(R.layout.item_list, parent, false);
+        return new MyViewHolder(v, recyclerViewInterface);
     }
 
     @Override
@@ -63,13 +63,13 @@ private final RecyclerViewInterface recyclerViewInterface;
         return marvelList.size();
     }
 
-    public static class  MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name;
         TextView realName;
         ImageView imageViewUrl;
 
-        public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
+        public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
             name = itemView.findViewById(R.id.tvTitle);
@@ -80,10 +80,10 @@ private final RecyclerViewInterface recyclerViewInterface;
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (recyclerViewInterface != null){
+                    if (recyclerViewInterface != null) {
                         int pos = getAdapterPosition();
 
-                        if (pos != RecyclerView.NO_POSITION){
+                        if (pos != RecyclerView.NO_POSITION) {
                             recyclerViewInterface.onItemClick(pos);
                         }
                     }
