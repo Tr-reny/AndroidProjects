@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
 
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     String myResponse = response.body().string();
 
                     MainActivity.this.runOnUiThread(new Runnable() {
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
