@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -51,7 +55,19 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            textViewResults.setText(myResponse);
+//                            textViewResults.setText(myResponse);
+
+                            JSONObject json = null;
+                            try {
+                                json = new JSONObject(myResponse);
+                                textViewResults.setText(json.getJSONObject("articles").getString("title")+ " "+json.getJSONObject("articles").getString("author"));
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+
+//                            txtString.setText(json.getJSONObject("data").getString("first_name")+ " "+json.getJSONObject("data").getString("last_name"));
                         }
                     });
 
