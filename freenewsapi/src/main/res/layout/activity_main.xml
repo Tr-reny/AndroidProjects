@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/TextViewResults"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:text="NEWS APP"
-        android:layout_height="match_parent"/>
-</androidx.core.widget.NestedScrollView>
+        <TextView
+            android:id="@+id/TextViewResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="NEWS APP"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </androidx.core.widget.NestedScrollView>
 
 
 </RelativeLayout>
