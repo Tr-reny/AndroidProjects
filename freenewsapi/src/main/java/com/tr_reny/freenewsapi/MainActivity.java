@@ -25,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
         TextView textViewResults = findViewById(R.id.TextViewResults);
         OkHttpClient client = new OkHttpClient();
 
+        String url = "https://free-news.p.rapidapi.com/v1/search?q=Elon%20Musk&lang=en";
+
         Request request = new Request.Builder()
-                .url("https://free-news.p.rapidapi.com/v1/search?q=Elon%20Musk&lang=en")
+                .url(url)
                 .get()
                 .addHeader("X-RapidAPI-Key", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18")
                 .addHeader("X-RapidAPI-Host", "free-news.p.rapidapi.com")
