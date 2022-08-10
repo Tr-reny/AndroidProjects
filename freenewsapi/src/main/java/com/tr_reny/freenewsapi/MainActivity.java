@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject json = null;
                             try {
                                 json = new JSONObject(myResponse);
-                                textViewResults.setText(json.getJSONObject("articles").getString("title")+ " "+json.getJSONObject("articles").getString("author"));
+                                textViewResults.setText(json.getJSONObject("status").getString("status"));
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
