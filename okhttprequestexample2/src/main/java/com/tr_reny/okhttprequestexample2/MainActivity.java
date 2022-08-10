@@ -42,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
 
+                if (response.isSuccessful()){
+                    String myResponse = response.body().string();
+
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            textViewResults.setText(myResponse);
+                        }
+                    });
+                }
 
 
             }
