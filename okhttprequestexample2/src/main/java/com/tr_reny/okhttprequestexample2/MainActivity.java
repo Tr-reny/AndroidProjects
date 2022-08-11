@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -45,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     String myResponse = response.body().string();
 
+
+
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -58,4 +64,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+
+
 }
