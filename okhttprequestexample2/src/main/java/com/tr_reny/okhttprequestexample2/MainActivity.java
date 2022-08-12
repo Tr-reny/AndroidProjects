@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     String myResponse = response.body().string();
 
-
-
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
