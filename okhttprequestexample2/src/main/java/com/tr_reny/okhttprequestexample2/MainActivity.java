@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                     String myResponse = response.body().string();
 
 
-
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
