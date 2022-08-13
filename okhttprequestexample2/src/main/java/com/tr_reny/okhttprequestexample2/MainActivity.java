@@ -23,6 +23,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
 
     private TextView textViewResults;
+    final String TAG = "OkHttp ex.2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()){
                     String myResponse = response.body().string();
+
+
 
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
