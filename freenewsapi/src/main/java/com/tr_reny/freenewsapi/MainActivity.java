@@ -24,6 +24,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ArticlesAPi articlesAPi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 .client(okHttpClient)
                 .build();
 
+        articlesAPi = retrofit.create(ArticlesAPi.class);
+        fetchArticles();
 
 
 
+
+/*
 
 
         OkHttpClient client = new OkHttpClient();
@@ -115,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+*/
 
 
     }
