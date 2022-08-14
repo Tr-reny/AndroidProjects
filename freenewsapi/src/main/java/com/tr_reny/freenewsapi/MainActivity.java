@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 .addInterceptor(loggingInterceptor)
                 .build();
 
-        String url = "https://free-news.p.rapidapi.com/v1/search?q=Elon%20Musk&lang=en";
+        String url = "https://free-news.p.rapidapi.com/";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)

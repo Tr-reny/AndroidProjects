@@ -1,4 +1,15 @@
 package com.tr_reny.freenewsapi;
 
-public class ArticlesAPi {
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+
+
+public interface ArticlesAPi {
+
+    @GET("v1/search?q=Elon%20Musk&lang=en")
+    Call<List<Articles>> getArticles();
+
+
 }
