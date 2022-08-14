@@ -138,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Articles>> call, Throwable t) {
+                t.printStackTrace();
+
 
             }
         });
