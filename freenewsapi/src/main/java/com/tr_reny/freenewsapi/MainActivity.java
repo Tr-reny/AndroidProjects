@@ -62,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 .client(okHttpClient)
                 .build();
 
-        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        getPosts();
+
 
 
 
