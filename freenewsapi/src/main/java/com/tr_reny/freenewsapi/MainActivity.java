@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private ArticlesAPi articlesAPi;
-    TextView textViewResults;
+    private TextView textViewResults;
 
 
     @Override
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         articlesAPi = retrofit.create(ArticlesAPi.class);
-      getArticles();
+        getArticles();
 
 
 
@@ -128,20 +128,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getArticles(){
+    private void getArticles() {
         Call<List<Articles>> call = articlesAPi.getArticles();
 
         call.enqueue(new Callback<List<Articles>>() {
             @Override
             public void onResponse(Call<List<Articles>> call, retrofit2.Response<List<Articles>> response) {
 
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     return;
                 }
 
                 List<Articles> articles = response.body();
-                for (Articles article : articles ){
-                        String content = "";
+                for (Articles article : articles) {
+                    String content = "";
                     content += "Title: " + article.getTitle() + "\n";
                     content += "Summary: " + article.getSummary() + "\n";
 
