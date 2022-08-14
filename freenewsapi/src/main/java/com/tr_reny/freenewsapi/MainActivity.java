@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
                         Request originalRequest = chain.request();
 
                         Request newRequest = originalRequest.newBuilder()
-                                .header("Interceptor-Header", "xyx")
+                                .get()
+                                .addHeader("X-RapidAPI-Key", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18")
+                                .addHeader("X-RapidAPI-Host", "free-news.p.rapidapi.com")
                                 .build();
 
                         return chain.proceed(newRequest);
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         String url = "https://free-news.p.rapidapi.com/v1/search?q=Elon%20Musk&lang=en";
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
+                .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
