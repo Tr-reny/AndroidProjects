@@ -134,6 +134,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Articles>> call, retrofit2.Response<List<Articles>> response) {
 
+                if (!response.isSuccessful()){
+                    return;
+                }
+
+
+
+
             }
 
             @Override
