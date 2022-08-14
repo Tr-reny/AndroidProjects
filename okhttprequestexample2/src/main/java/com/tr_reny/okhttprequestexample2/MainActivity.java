@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewResults;
     final String TAG = "OkHttp ex.2";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +51,28 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG,"onResponse: Thread Id" + Thread.currentThread());
 
                 if (response.isSuccessful()){
-                    String myResponse = response.body().string();
+                   final String myResponse = response.body().string();
 
+//                    final JSONArray myResponse=new JSONArray(response.body());
+
+                    try {
+                        JSONArray jsonArray = new JSONArray(myResponse);
+                      for (int i=0; i<myResponse.length(); i++){
+                          JSONObject marvel = jsonArray.getJSONObject(i);
+                          String firstname = marvel.getString("name");
+                          String lastname = marvel.getString("realname");
+                      }
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            textViewResults.setText(myResponse);
+
+                            textViewResults.setText(marv);
                         }
                     });
                 }
