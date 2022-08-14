@@ -11,14 +11,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -124,5 +125,21 @@ public class MainActivity extends AppCompatActivity {
 */
 
 
+    }
+
+    private void fetchArticles(){
+        Call<List<Articles>> call = ArticlesAPi.getArticles();
+
+        call.enqueue(new Callback<List<Articles>>() {
+            @Override
+            public void onResponse(Call<List<Articles>> call, retrofit2.Response<List<Articles>> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Articles>> call, Throwable t) {
+
+            }
+        });
     }
 }
