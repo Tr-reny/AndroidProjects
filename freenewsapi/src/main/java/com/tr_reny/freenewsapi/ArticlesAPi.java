@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 public interface ArticlesAPi {
 
     @GET("v1/search?q=Elon%20Musk&lang=en")
-    static Call<List<Articles>> getArticles();
+  Call<List<Articles>> getArticles();
 
 
 }

@@ -26,6 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private ArticlesAPi articlesAPi;
+    TextView textViewResults;
 
 
     @Override
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textViewResults = findViewById(R.id.TextViewResults);
+        textViewResults = findViewById(R.id.TextViewResults);
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         articlesAPi = retrofit.create(ArticlesAPi.class);
-        fetchArticles();
+      getArticles();
 
 
 
@@ -127,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void fetchArticles(){
-        Call<List<Articles>> call = ArticlesAPi.getArticles();
+    private void getArticles(){
+        Call<List<Articles>> call = articlesAPi.getArticles();
 
         call.enqueue(new Callback<List<Articles>>() {
             @Override
@@ -138,7 +139,14 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+                List<Articles> articles = response.body();
+                for (Articles article : articles ){
+                        String content = "";
+                    content += "Title: " + article.getTitle() + "\n";
+                    content += "Summary: " + article.getSummary() + "\n";
 
+                    textViewResults.append(content);
+                }
 
 
             }
