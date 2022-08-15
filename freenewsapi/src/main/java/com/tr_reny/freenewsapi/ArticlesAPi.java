@@ -8,8 +8,8 @@ import retrofit2.http.GET;
 
 public interface ArticlesAPi {
 
-    @GET("marvel")
-//  @GET("v1/search?q=Elon%20Musk&lang=en")
+//    @GET("marvel")
+  @GET("v1/search?q=Elon%20Musk&lang=en")
   Call<List<Articles>> getArticles();
 
 
