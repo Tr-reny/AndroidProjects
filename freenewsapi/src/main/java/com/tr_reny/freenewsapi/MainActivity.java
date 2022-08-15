@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         String url = "https://free-news.p.rapidapi.com/";
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://www.simplifiedcoding.net/demos/")
-//                .baseUrl(url)
+//                .baseUrl("https://www.simplifiedcoding.net/demos/")
+                .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
