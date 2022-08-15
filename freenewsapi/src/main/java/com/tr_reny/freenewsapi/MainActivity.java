@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 List<Articles> articles = response.body();
                 for (Articles article : articles) {
                     String content = "";
-                    content += "Title: " + article.getName() + "\n";
-                    content += "Summary: " + article.getRealname() + "\n";
+                    content += "Title: " + article.getTitle() + "\n";
+                    content += "Summary: " + article.getSummary() + "\n";
 
                     textViewResults.append(content);
                 }
