@@ -63,12 +63,14 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            try {
+                          /*  try {
                                 JSONObject jsonObject = new JSONObject(myResponse);
                                 textViewResults.setText(jsonObject.getJSONObject("articles").getString("author")+ " " + jsonObject.getJSONObject("articles").getString("total_hits"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                            }
+                            }*/
+
+                            textViewResults.setText(myResponse);
                         }
                     });
 
