@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
                         Request newRequest = originalRequest.newBuilder()
                                 .get()
-//                                .addHeader("X-RapidAPI-Key", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18")
-//                                .addHeader("X-RapidAPI-Host", "free-news.p.rapidapi.com")
+                                .addHeader("X-RapidAPI-Key", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18")
+                                .addHeader("X-RapidAPI-Host", "free-news.p.rapidapi.com")
                                 .build();
 
                         return chain.proceed(newRequest);
