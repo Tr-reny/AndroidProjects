@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
                         Request newRequest = originalRequest.newBuilder()
                                 .get()
-                                .addHeader("X-RapidAPI-Key", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18")
-                                .addHeader("X-RapidAPI-Host", "free-news.p.rapidapi.com")
+//                                .addHeader("X-RapidAPI-Key", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18")
+//                                .addHeader("X-RapidAPI-Host", "free-news.p.rapidapi.com")
                                 .build();
 
                         return chain.proceed(newRequest);
@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         String url = "https://free-news.p.rapidapi.com/";
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(url)
+                .baseUrl("https://www.simplifiedcoding.net/demos/")
+//                .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
@@ -136,14 +137,15 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<Articles>> call, retrofit2.Response<List<Articles>> response) {
 
                 if (!response.isSuccessful()) {
+                    textViewResults.setText("Code: " + response.code());
                     return;
                 }
 
                 List<Articles> articles = response.body();
                 for (Articles article : articles) {
                     String content = "";
-                    content += "Title: " + article.getTitle() + "\n";
-                    content += "Summary: " + article.getSummary() + "\n";
+                    content += "Title: " + article.getName() + "\n";
+                    content += "Summary: " + article.getRealname() + "\n";
 
                     textViewResults.append(content);
                 }
@@ -153,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Articles>> call, Throwable t) {
-                t.printStackTrace();
+              textViewResults.setText(t.getMessage());
 
 
             }
