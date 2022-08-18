@@ -12,5 +12,5 @@ import retrofit2.http.POST;
 public interface RetrofitAPI {
 
     @POST("users")
-    Call<List<DataModal>> createPost(@Body DataModal dataModal);
+    Call<DataModal> createPost(@Body DataModal dataModal);
 }
