@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Creation of retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://reqres.in/api/")
                 // as we are sending data in json format so
                 // we have to add Gson converter factory
                 .addConverterFactory(GsonConverterFactory.create())
