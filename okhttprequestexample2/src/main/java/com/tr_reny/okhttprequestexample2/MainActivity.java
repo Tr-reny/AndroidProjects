@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
 
-                            textViewResults.setText(marv);
+                            textViewResults.setText(myResponse);
                         }
                     });
                 }
