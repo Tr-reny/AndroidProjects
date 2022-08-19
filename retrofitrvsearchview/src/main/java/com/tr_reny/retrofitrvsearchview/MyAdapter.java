@@ -30,11 +30,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Post post = postList.get(position);
-        holder.userId.setText(post.getUserId());
-        holder.id.setText(post.getId());
-        holder.body.setText(post.getBody());
-        holder.title.setText(post.getTitle());
+        holder.title.setText(postList.get(position).getTitle());
+//        holder.id.setText(postList.get(position).getId());
+//        holder.userId.setText(postList.get(position).getUserId());
+        holder.body.setText(postList.get(position).getBody());
 
     }
 
@@ -52,8 +51,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             title = itemView.findViewById(R.id.tvtitle);
             body = itemView.findViewById(R.id.tvbody);
-            userId = itemView.findViewById(R.id.tvuserId);
-            id = itemView.findViewById(R.id.tvId);
+//            userId = itemView.findViewById(R.id.tvuserId);
+//            id = itemView.findViewById(R.id.tvId);
 
         }
     }

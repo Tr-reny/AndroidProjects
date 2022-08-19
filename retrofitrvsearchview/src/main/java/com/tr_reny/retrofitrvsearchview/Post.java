@@ -7,7 +7,7 @@ package com.tr_reny.retrofitrvsearchview;
 public class Post {
 
     private String title,body;
-    private Integer userId,id;
+    private int userId,id;
 
     public String getTitle() {
         return title;
@@ -17,11 +17,11 @@ public class Post {
         return body;
     }
 
-    public Integer getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 }
