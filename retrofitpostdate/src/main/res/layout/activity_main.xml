@@ -9,13 +9,23 @@
     tools:context=".MainActivity">
 
     <!--edit text field for adding name-->
+    <TextView
+        android:id="@+id/tvNameError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="#E60707"
+        android:text="Enter your name" />
+
     <EditText
         android:id="@+id/idEdtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="40dp"
-        android:hint="Enter your name" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+           android:hint="Enter your name" />
 
     <!--edit text for adding job-->
     <EditText

@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }*/
 
-                //validate if the fields is empty or not
+                //validate if Name and Job fields is empty or not
                 if (edtxtName.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter Name", Toast.LENGTH_SHORT).show();
                 } else if (edtxtJob.getText().toString().isEmpty()) {
