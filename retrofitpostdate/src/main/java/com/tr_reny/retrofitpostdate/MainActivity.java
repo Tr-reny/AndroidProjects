@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-
                 //Calling a method to post the data and passing our name and Job.
                 postData(edtxtName.getText().toString(), edtxtJob.getText().toString());
             }
