@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
 
                 //Validate if each field is empty or not and display it on TextView
                 if (edtxtName.getText().toString().isEmpty()) {
-                    tvNameError.setError("Please Enter Name");
+                    tvNameError.setError("Name ia required");
                 } else if (edtxtJob.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter Job Role", Toast.LENGTH_SHORT).show();
-                    return;
+                    return ;
                 }
 
 
