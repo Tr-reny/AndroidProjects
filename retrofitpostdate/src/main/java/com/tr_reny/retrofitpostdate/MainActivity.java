@@ -42,11 +42,21 @@ public class MainActivity extends AppCompatActivity {
         btncreatePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //validate if the fields is empty or not
+           /*     //validate if the fields is empty or not
                 if (edtxtName.getText().toString().isEmpty() && edtxtJob.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter Both the Values", Toast.LENGTH_SHORT).show();
                     return;
+                }*/
+
+                //validate if the fields is empty or not
+                if (edtxtName.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter Name", Toast.LENGTH_SHORT).show();
+                } else if (edtxtJob.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter Job Role", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+
                 //Calling a method to post the data and passing our name and Job.
                 postData(edtxtName.getText().toString(), edtxtJob.getText().toString());
             }
@@ -81,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<DataModal>() {
             @Override
             public void onResponse(Call<DataModal> call, Response<DataModal> response) {
-                if (!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     tvresponse.setText("CODE: " + response.code());
                     return;
                 }
@@ -99,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 DataModal responseFromAPI = response.body();
 
                 //getting data from Model Class and adding it to our String
-                String responseString = "Response Code: " + response.code() + "\nName: " +responseFromAPI.getName() + "\n" + "Job: " +responseFromAPI.getJob();
+                String responseString = "Response Code: " + response.code() + "\nName: " + responseFromAPI.getName() + "\n" + "Job: " + responseFromAPI.getJob();
 
                 //Setting our string to our TextView
                 tvresponse.setText(responseString);
@@ -112,8 +122,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
 
 
     }
