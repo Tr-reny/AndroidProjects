@@ -23,7 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * */
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private MyAdapter myAdapter;
     private List<Post> postList;
 
 

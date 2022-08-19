@@ -10,26 +10,27 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    Context context;
-    ArrayList<Post> list;
+  private Context mContext;
+  private List<Post> postList;
 
-    public MyAdapter(Context context, ArrayList<Post> post) {
-        this.context = context;
-        this.list = post;
+    public MyAdapter(Context mContext, List<Post> postList) {
+        this.mContext = mContext;
+        this.postList = postList;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.post_item,parent,false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.post_item,parent,false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Post post = list.get(position);
+        Post post = postList.get(position);
         holder.userId.setText(post.getUserId());
         holder.id.setText(post.getId());
         holder.body.setText(post.getBody());
@@ -39,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return postList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
@@ -53,7 +54,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             body = itemView.findViewById(R.id.tvbody);
             userId = itemView.findViewById(R.id.tvuserId);
             id = itemView.findViewById(R.id.tvId);
-
 
         }
     }
