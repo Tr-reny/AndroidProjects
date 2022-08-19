@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edtxtName, edtxtJob;
     private Button btncreatePost;
     private ProgressBar progressBar;
-    private TextView tvresponse;
+    private TextView tvresponse,tvNameError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.idLoadingPB);
         btncreatePost = findViewById(R.id.idBtnPost);
         tvresponse = findViewById(R.id.idTVResponse);
+        tvNameError = findViewById(R.id.tvNameError);
 
         btncreatePost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,13 +49,22 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }*/
 
-                //validate if Name and Job fields is empty or not
+              /*  //validate if Name and Job fields is empty or not
                 if (edtxtName.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter Name", Toast.LENGTH_SHORT).show();
                 } else if (edtxtJob.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter Job Role", Toast.LENGTH_SHORT).show();
                     return;
+                }*/
+
+                //Validate if each field is empty or not and display it on TextView
+                if (edtxtName.getText().toString().isEmpty()) {
+                    tvNameError.setError("Please Enter Name");
+                } else if (edtxtJob.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter Job Role", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
 
                 //Calling a method to post the data and passing our name and Job.
                 postData(edtxtName.getText().toString(), edtxtJob.getText().toString());

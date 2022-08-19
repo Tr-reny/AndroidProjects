@@ -16,8 +16,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginEnd="10dp"
-        android:textColor="#E60707"
-        android:text="Enter your name" />
+        android:textColor="#E60707"/>
 
     <EditText
         android:id="@+id/idEdtName"
