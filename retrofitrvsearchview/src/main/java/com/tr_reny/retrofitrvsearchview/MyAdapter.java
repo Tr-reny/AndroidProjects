@@ -1,6 +1,7 @@
 package com.tr_reny.retrofitrvsearchview;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -12,27 +13,33 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     Context context;
-    ArrayList<Post> post;
+    ArrayList<Post> list;
 
     public MyAdapter(Context context, ArrayList<Post> post) {
         this.context = context;
-        this.post = post;
+        this.list = post;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view
+        View v = LayoutInflater.from(context).inflate(R.layout.post_item,parent,false);
+        return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Post post = list.get(position);
+        holder.userId.setText(post.getUserId());
+        holder.id.setText(post.getId());
+        holder.body.setText(post.getBody());
+        holder.title.setText(post.getTitle());
 
     }
 
     @Override
     public int getItemCount() {
-        return post.size();
+        return list.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
