@@ -1,6 +1,7 @@
 package com.tr_reny.retrofitrvsearchview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -19,13 +20,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * */
 public class MainActivity extends AppCompatActivity {
     private TextView textViewResults;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewResults = findViewById(R.id.tvResults);
+        recyclerView = findViewById(R.id.recyclerView);
+
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
