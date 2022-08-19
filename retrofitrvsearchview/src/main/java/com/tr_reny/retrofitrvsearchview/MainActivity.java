@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         textViewResults = findViewById(R.id.tvResults);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
