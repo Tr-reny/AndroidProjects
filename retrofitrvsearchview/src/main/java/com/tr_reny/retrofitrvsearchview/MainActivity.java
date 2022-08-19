@@ -1,11 +1,14 @@
 package com.tr_reny.retrofitrvsearchview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -19,8 +22,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * This is an App which shows the functionality of Retrofit with RecycleView and SearchView together
  * */
 public class MainActivity extends AppCompatActivity {
-    private TextView textViewResults;
     private RecyclerView recyclerView;
+    private MyAdapter myAdapter;
+    private List<Post> postList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recyclerView);
-
+        postList = new ArrayList<>();
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -44,32 +49,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
                 if (!response.isSuccessful()){
-                    textViewResults.setText("CODE: " + response.code());
+                   /* textViewResults.setText("CODE: " + response.code());*/
                     return;
                 }
 
                 List<Post> posts = response.body();
                 for (Post post : posts){
-                    String content = "";
+                   /* String content = "";
 
                     content += "ID: " + post.getId() + "\n";
                     content += "UserID: " + post.getUserId() + "\n";
                     content += "Body: " + post.getBody() + "\n";
-                    content += "Title: " + post.getTitle() + "\n";
+                    content += "Title: " + post.getTitle() + "\n";*/
+                   postList.add(post);
 
-                    textViewResults.append(content);
                 }
-
+                PutDataIntoRecylerView(postList);
 
 
             }
 
             @Override
             public void onFailure(Call<List<Post>> call, Throwable t) {
-                textViewResults.setText(t.getMessage());
+               t.printStackTrace();
 
             }
         });
+
+    }
+    private void PutDataIntoRecylerView(List<Post> postList) {
+
+        MyAdapter myAdapter = new MyAdapter(this,postList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myAdapter);
+
 
     }
 }
