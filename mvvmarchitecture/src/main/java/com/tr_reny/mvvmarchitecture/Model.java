@@ -6,20 +6,20 @@ import androidx.annotation.Nullable;
  * this is a model class that holds the email and password entered by user */
 public class Model {
     @Nullable
-    String name,password;
+    String email, password;
 
-    public Model(@Nullable String name, @Nullable String password) {
-        this.name = name;
+    public Model(@Nullable String email, @Nullable String password) {
+        this.email = email;
         this.password = password;
     }
 
     @Nullable
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(@Nullable String name) {
-        this.name = name;
+    public void setEmail(@Nullable String email) {
+        this.email = email;
     }
 
     @Nullable

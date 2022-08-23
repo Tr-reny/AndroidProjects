@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type=".AppViewModel" />
+            type="com.tr_reny.mvvmarchitecture.AppViewModel" />
     </data>
 
     <!-- Provided Linear layout for the activity components -->
