@@ -27,7 +27,7 @@
             android:text="MVVM Architecture Pattern"
             android:textAlignment="center"
             android:textColor="@android:color/holo_green_dark"
-            android:textSize="36sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <!-- EditText field for the Email -->
