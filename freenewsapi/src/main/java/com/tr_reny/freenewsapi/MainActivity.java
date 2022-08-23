@@ -13,13 +13,14 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
+import okhttp3.Credentials;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -36,6 +37,65 @@ public class MainActivity extends AppCompatActivity {
 
         textViewResults = findViewById(R.id.TextViewResults);
 
+        OkHttpClient.Builder okhttpClient = new OkHttpClient.Builder();
+        okhttpClient.addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Interceptor.Chain chain) throws IOException {
+                Request request = chain.request();
+
+                // Request customization: add request headers
+                Request.Builder requestBuilder = request.newBuilder()
+                        .addHeader("X-RapidAPI-Key", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18")
+                        .addHeader("X-RapidAPI-Host", "free-news.p.rapidapi.com");
+                     /*   Credentials.basic("aUsername", "aPassword"));*/
+
+                return chain.proceed(requestBuilder.build());
+            }
+        });
+
+      /*  Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://free-news.p.rapidapi.com")
+                .client(okhttpClient).build();
+        articlesAPi = retrofit.create(ArticlesAPi.class);
+        getArticle();*/
+
+
+    }
+    private void getArticle(){
+        Call<List<Articles>> call = articlesAPi.getArticles();
+        call.enqueue(new Callback<List<Articles>>() {
+            @Override
+            public void onResponse(Call<List<Articles>> call, retrofit2.Response<List<Articles>> response) {
+                if (!response.isSuccessful()) {
+                    textViewResults.setText("Code: " + response.code());
+                    return;
+                }
+                List<Articles> articles = response.body();
+                for (Articles article : articles) {
+                    String content = "";
+                    content += "ID: " + article.getSummary() + "\n";
+                    /*content += "User ID: " + post.getUserId() + "\n";
+                    content += "Title: " + post.getTitle() + "\n";
+                    content += "Text: " + post.getText() + "\n\n";*/
+
+                    textViewResults.append(content);
+
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Articles>> call, Throwable t) {
+                textViewResults.setText(t.getMessage());
+
+            }
+        });
+
+    }
+}
+
+
+
+
+/*
 
         OkHttpClient client = new OkHttpClient();
 
@@ -63,12 +123,14 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                          /*  try {
+                          */
+/*  try {
                                 JSONObject jsonObject = new JSONObject(myResponse);
                                 textViewResults.setText(jsonObject.getJSONObject("articles").getString("author")+ " " + jsonObject.getJSONObject("articles").getString("total_hits"));
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                            }*/
+                            }*//*
+
 
                             textViewResults.setText(myResponse);
                         }
@@ -79,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+*/
 
  /*       client.newCall(request).enqueue(new Callback() {
             @Override
@@ -118,6 +181,3 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
-
-    }
-}
