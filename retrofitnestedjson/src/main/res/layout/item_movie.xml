@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="3dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:gravity="center"
+        android:text="Title"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_released"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTitle"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:textColor="@color/black"
+        android:text="2020"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_plot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_released"
+        android:layout_alignStart="@+id/tv_released"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="6dp"
+        android:text="Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure."
+        android:textColor="@color/black" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_plot"
+        android:layout_alignStart="@+id/tv_plot"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="4dp" />
+
+
+    <TextView
+        android:id="@+id/tv_imagesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar"
+        android:layout_alignStart="@+id/ratingBar"
+        android:layout_alignEnd="@+id/ratingBar"
+        android:layout_marginTop="3dp"
+        android:text="Images" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/tv_imagesTitle"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+
+
+</RelativeLayout>
