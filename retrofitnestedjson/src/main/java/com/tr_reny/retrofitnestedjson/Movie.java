@@ -5,7 +5,6 @@ public class Movie {
 
     //getter
 
-
     public String getTitle() {
         return Title;
     }
