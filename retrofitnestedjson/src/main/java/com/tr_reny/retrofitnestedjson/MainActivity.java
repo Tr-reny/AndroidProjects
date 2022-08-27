@@ -8,6 +8,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("")
-                .addConverterFactory(GsonConverterFactory)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         MovieAPI movieAPI = retrofit.create(MovieAPI.class);
