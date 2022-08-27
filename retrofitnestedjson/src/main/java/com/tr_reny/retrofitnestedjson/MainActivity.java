@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.List;
+
+import retrofit2.Call;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("")
                 .addConverterFactory(GsonConverterFactory)
                 .build();
+
+        MovieAPI movieAPI = retrofit.create(MovieAPI.class);
 
     }
 }
