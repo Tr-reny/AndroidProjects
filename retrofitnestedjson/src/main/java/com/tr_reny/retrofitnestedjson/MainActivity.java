@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
                 if (!response.isSuccessful()){
-
+                    Toast.makeText(MainActivity.this,"Code: " + response.code(), Toast.LENGTH_SHORT).show();
                   return;
                 }
 
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Movie>> call, Throwable t) {
+                Toast.makeText(MainActivity.this,"Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 t.printStackTrace();
             }
         });
