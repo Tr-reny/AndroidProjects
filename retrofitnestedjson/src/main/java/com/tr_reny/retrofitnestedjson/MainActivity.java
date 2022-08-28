@@ -13,7 +13,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Created on 27th AUG 2022 by Reny K.
+ * This is a simple app that shows how the Nested JSON is accessed*/
+
 public class MainActivity extends AppCompatActivity {
+    // JSONSERVE LINK https://api.jsonserve.com/heyQhT
     private MovieAPI movieAPI;
 
     @Override
@@ -22,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://api.jsonserve.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
        movieAPI = retrofit.create(MovieAPI.class);
-        getMoveList();
+     //   getMoveList();
 
     }
     private void getMoveList(){
