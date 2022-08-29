@@ -1,13 +1,18 @@
 package com.tr_reny.retrofitnestedjson;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Movie {
-   private String title , year ;
+     public Integer total;
+     public List<Movie__1> movies = null;
 
-   public String getTitle() {
-      return title;
-   }
+     public Integer getTotal() {
+          return total;
+     }
 
-   public String getYear() {
-      return year;
-   }
+     public List<Movie__1> getMovies() {
+          return movies;
+     }
 }

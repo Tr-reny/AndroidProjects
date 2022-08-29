@@ -3,7 +3,12 @@ package com.tr_reny.retrofitnestedjson;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.gson.JsonObject;
+
+import org.json.JSONArray;
 
 import java.util.List;
 
@@ -19,37 +24,56 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     // JSONSERVE LINK https://api.jsonserve.com/heyQhT
-    private MovieAPI movieAPI;
+    private JsonServeAPI jsonServeAPI;
+    private TextView textViewresults;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textViewresults =findViewById(R.id.txt_results);
+
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.jsonserve.com")
+                .baseUrl("https://api.jsonserve.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-       movieAPI = retrofit.create(MovieAPI.class);
-     //   getMoveList();
+     jsonServeAPI = retrofit.create(JsonServeAPI.class);
+     getMoveList();
 
     }
     private void getMoveList(){
-        Call<List<Movie>> call = movieAPI.getMovieList();
+        Call<List<Movie>> call = jsonServeAPI.getMovieList();
         call.enqueue(new Callback<List<Movie>>() {
             @Override
             public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
                 if (!response.isSuccessful()){
-                    Toast.makeText(MainActivity.this,"Code: " + response.code(), Toast.LENGTH_SHORT).show();
-                  return;
+                    textViewresults.setText("Code: " + response.code());
+//                    Toast.makeText(MainActivity.this, "Code: " + response.code() , Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                List<Movie> movies = response.body();
+                for (Movie movie : movies){
+                 String content = "";
+                    content += "Total" + movie.getTotal() + "\n";
+                    content += "Name: " + movie.getMovies().getClass().getName() + "\n";
+              /*
+                    content += "RealName: " + marvel.getRealname() + "\n";
+                    content += "Team: " + marvel.getTeam() + "\n";
+                    content += "Bio: " + marvel.getBio() + "\n";
+                    content += "ImageUrl: " + marvel.getImageurl() + "\n\n";*/
+
+                   textViewresults.append(content);
                 }
 
             }
 
             @Override
             public void onFailure(Call<List<Movie>> call, Throwable t) {
-                Toast.makeText(MainActivity.this,"Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                textViewresults.setText(t.getMessage());
+//                Toast.makeText(MainActivity.this,"Error: " + t.getMessage() , Toast.LENGTH_SHORT ).show();
                 t.printStackTrace();
             }
         });
