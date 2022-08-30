@@ -34,48 +34,5 @@ public class MainActivity extends AppCompatActivity {
 
         textViewresults =findViewById(R.id.txt_results);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.jsonserve.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-     jsonServeAPI = retrofit.create(JsonServeAPI.class);
-     getMoveList();
-
-    }
-    private void getMoveList(){
-        Call<List<Movie>> call = jsonServeAPI.getMovieList();
-        call.enqueue(new Callback<List<Movie>>() {
-            @Override
-            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                if (!response.isSuccessful()){
-                    textViewresults.setText("Code: " + response.code());
-//                    Toast.makeText(MainActivity.this, "Code: " + response.code() , Toast.LENGTH_LONG).show();
-                    return;
-                }
-
-                List<Movie> movies = response.body();
-                for (Movie movie : movies){
-                 String content = "";
-                    content += "Total" + movie.getTotal() + "\n";
-                    content += "Name: " + movie.getMovies().getClass().getName() + "\n";
-              /*
-                    content += "RealName: " + marvel.getRealname() + "\n";
-                    content += "Team: " + marvel.getTeam() + "\n";
-                    content += "Bio: " + marvel.getBio() + "\n";
-                    content += "ImageUrl: " + marvel.getImageurl() + "\n\n";*/
-
-                   textViewresults.append(content);
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Movie>> call, Throwable t) {
-                textViewresults.setText(t.getMessage());
-//                Toast.makeText(MainActivity.this,"Error: " + t.getMessage() , Toast.LENGTH_SHORT ).show();
-                t.printStackTrace();
-            }
-        });
-    }
+}
 }

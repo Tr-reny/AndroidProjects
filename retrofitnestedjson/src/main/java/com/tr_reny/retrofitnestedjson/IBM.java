@@ -7,7 +7,7 @@ public class IBM {
     public Author author;
     public mEditor editor;
     public String title;
-    public List<String> category = null;
+//    public List<String> category = null;
 
 }
 
