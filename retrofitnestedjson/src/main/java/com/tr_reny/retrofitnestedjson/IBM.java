@@ -7,7 +7,26 @@ public class IBM {
     public Author author;
     public mEditor editor;
     public String title;
-//    public List<String> category = null;
+    public List<String> category = null;
 
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public mEditor getEditor() {
+        return editor;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public List<String> getCategory() {
+        return category;
+    }
 }
 
