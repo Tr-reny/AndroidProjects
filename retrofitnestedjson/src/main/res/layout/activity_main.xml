@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     tools:context=".MainActivity">
-     <TextView
+     <androidx.recyclerview.widget.RecyclerView
+         android:layout_width="match_parent"
+         android:id="@+id/recyclerView"
+         android:layout_height="match_parent"/>
+  <!--   <TextView
          android:id="@+id/txt_results"
         android:layout_width="match_parent"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"/>-->
 
  <!--   <include layout="@layout/item_movie"/>
     <include layout="@layout/item_movie"/>
