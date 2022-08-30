@@ -23,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * This is a simple app that shows how the Nested JSON is accessed*/
 
 public class MainActivity extends AppCompatActivity {
-    // JSONSERVE LINK https://api.jsonserve.com/heyQhT
+    // JSONSERVE LINK https://api.jsonserve.com/gPKgmN
     private JsonServeAPI jsonServeAPI;
     private TextView textViewresults;
 
@@ -34,5 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
         textViewresults =findViewById(R.id.txt_results);
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.jsonserve.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        jsonServeAPI = retrofit.create(JsonServeAPI.class);
+        getIBM();
 }
 }
