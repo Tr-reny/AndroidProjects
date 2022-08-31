@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewMovie , recyclerViewDirectors;
     private MockApi mockApi;
     private List<RecommendMovie> recommendMovieList;
+    private MyAdapter myAdapter;
 
 
     @Override
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerViewMovie = findViewById(R.id.recylerViewMovie);
+        recommendMovieList = new ArrayList<>();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://60d194a45b017400178f3e51.mockapi.io")
@@ -72,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void PutDataIntoRecylerView(List<RecommendMovie> recommendMovieList) {
 
-        MyAdapter myAdapter = new MyAdapter(this,recommendMovieList);
+        myAdapter = new MyAdapter(this, recommendMovieList);
         recyclerViewMovie.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewMovie.setAdapter(myAdapter);
 
