@@ -1,6 +1,8 @@
 package com.tr_reny.retrofitnestedjson;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -29,13 +31,18 @@ public class MainActivity extends AppCompatActivity {
     // JSONSERVE LINK https://run.mocky.io/v3/65866b72-2c90-4697-808c-cf1b52bf8794
     private JsonServeAPI jsonServeAPI;
     private TextView textViewresults;
+    private RecyclerView recyclerView;
+    private ArrayList<IBM> ibmArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewresults = findViewById(R.id.txt_results);
+        ibmArrayList = new ArrayList<>();
+
+       // textViewresults = findViewById(R.id.txt_results);
+        recyclerView = findViewById(R.id.recyclerView);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://run.mocky.io/")
@@ -54,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<IBM>> call, Response<List<IBM>> response) {
 
                 if (response.isSuccessful()){
-                    textViewresults.setText("Code: " + response.code());
+                //    textViewresults.setText("Code: " + response.code());
                     return;
                 }
 
@@ -87,18 +94,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<IBM>> call, Response<ArrayList<IBM>> response) {
                 if (!response.isSuccessful()){
-                    textViewresults.setText("code: " + response.code());
+//                    textViewresults.setText("code: " + response.code());
                     return;
                 }
-                textViewresults.setText("code: " + response);
+                List<IBM> ibms = response.body();
+                for (IBM ibm : ibms) {
+
+
+                    ibmArrayList.add(ibm);
+                }
+                PutDataIntoRecylerView(ibmArrayList);
 
             }
 
             @Override
             public void onFailure(Call<ArrayList<IBM>> call, Throwable t) {
-                textViewresults.setText(t.getMessage());
+          //      textViewresults.setText(t.getMessage());
 
             }
         });
+    }
+    private void PutDataIntoRecylerView(ArrayList<IBM> ibmArrayList) {
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        MyAdapter myAdapter = new MyAdapter(this, ibmArrayList );
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(myAdapter);
+
+
     }
 }
