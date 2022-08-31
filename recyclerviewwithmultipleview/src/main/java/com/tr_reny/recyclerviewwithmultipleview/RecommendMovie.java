@@ -6,8 +6,17 @@ public class RecommendMovie {
     private String title;
     private String thumbnail;
     private String release_date;
+    //additional
+    private String imageurl;
+    private String name;
 
-    //getters
+    public String getName() {
+        return name;
+    }
+    public String getImageurl() {
+        return imageurl;
+    }
+//getters
 
     public String getId() {
         return id;

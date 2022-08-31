@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import androidx.annotation.NonNull;
@@ -34,12 +35,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.name.setText(recommendMovieList.get(position).getName());
+
 
         //Adding Glide Library to display the images
 
         Glide.with(mContext)
-                .load(recommendMovieList.get(position).getThumbnail())
-                .into(holder.thumbnail);
+                .load(recommendMovieList.get(position).getImageurl())
+                .into(holder.imageUrl);
 
 
     }
@@ -50,12 +53,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView thumbnail;
+        ImageView imageUrl;
+        TextView name;
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            thumbnail = itemView.findViewById(R.id.image_view_movie);
+            imageUrl = itemView.findViewById(R.id.image_view_movie);
+            name = itemView.findViewById(R.id.tv_title);
         }
     }
 }

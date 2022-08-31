@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         recommendMovieList = new ArrayList<>();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://60d194a45b017400178f3e51.mockapi.io")
+                .baseUrl("https://www.simplifiedcoding.net/demos/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
