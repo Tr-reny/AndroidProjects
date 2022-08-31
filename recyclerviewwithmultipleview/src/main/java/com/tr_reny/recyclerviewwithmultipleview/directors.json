@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "name": "Russo Brothers",
+    "avatar": "https://i.ibb.co/TbR4V3b/russo.jpg",
+    "movie_count": "15"
+  },
+  {
+    "id": "2",
+    "name": "Steven Spielberg",
+    "avatar": "https://i.ibb.co/y5rDhKp/steven.jpg",
+    "movie_count": "12"
+  }
+]

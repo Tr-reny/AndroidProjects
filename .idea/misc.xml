@@ -24,6 +24,9 @@
         <entry key="realtimerecyleview/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="realtimerecyleview/src/main/res/layout/activity_userlist.xml" value="0.1859375" />
         <entry key="realtimerecyleview/src/main/res/layout/item.xml" value="0.22" />
+        <entry key="recyclerviewwithmultipleview/src/main/res/layout/item_director.xml" value="0.44375" />
+        <entry key="recyclerviewwithmultipleview/src/main/res/layout/item_movie.xml" value="0.44375" />
+        <entry key="recyclerviewwithmultipleview/src/main/res/layout/item_title.xml" value="0.5" />
         <entry key="retrofitexample/src/main/res/layout/activity_main.xml" value="0.1859375" />
         <entry key="retrofitmovie/src/main/res/layout-land/marvel_item.xml" value="0.2703125" />
         <entry key="retrofitmovie/src/main/res/layout/activity_main.xml" value="0.5" />

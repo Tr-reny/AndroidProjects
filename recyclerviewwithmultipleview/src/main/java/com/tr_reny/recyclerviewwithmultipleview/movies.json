@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "Captain America",
+    "thumbnail": "https://i.ibb.co/3ffM9SK/captain-america.jpg",
+    "release_date": "----"
+  },
+  {
+    "id": "2",
+    "title": "Avengers Endgame",
+    "thumbnail": "https://i.ibb.co/xCndmYK/endgame.jpg",
+    "release_date": "----"
+  }
+]
