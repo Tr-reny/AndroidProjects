@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <com.facebook.drawee.view.SimpleDraweeView
+    <ImageView
         android:id="@+id/image_view_director"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -15,7 +14,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/ic_director" />
+        android:src="@drawable/ic_director" />
+
+<!--    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/image_view_director"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/ic_director" />-->
 
     <TextView
         android:id="@+id/text_view_name"
@@ -29,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image_view_director"
         app:layout_constraintTop_toTopOf="@+id/image_view_director"
-        tools:text="Steven Spielberg " />
+         android:text="Steven Spielberg " />
 
     <TextView
         android:id="@+id/text_view_movies"
