@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private List<RecommendMovie> recommendMovieList;
     private MyAdapter myAdapter;
 
+    private MyAdaperD myAdaperD;
+    private List<Directors> directorsList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +38,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerViewMovie = findViewById(R.id.recylerViewMovie);
-        recommendMovieList = new ArrayList<>();
+        recyclerViewDirectors = findViewById(R.id.recylerViewDirector);
 
+        recommendMovieList = new ArrayList<>();
+        directorsList = new ArrayList<>();
+
+        getRecommendMovie();
+        getDirectorList();
+
+    }
+    private void getRecommendMovie() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.simplifiedcoding.net/demos/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         mockApi = retrofit.create(MockApi.class);
-        getRecommendMovie();
-
-    }
-    private void getRecommendMovie() {
         Call<List<RecommendMovie>> call = mockApi.getRecommendMovie();
         call.enqueue(new Callback<List<RecommendMovie>>() {
             @Override
@@ -74,6 +81,41 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void getDirectorList(){
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.jsonserve.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        mockApi = retrofit.create(MockApi.class);
+
+        Call<List<Directors>> call = mockApi.getDirectorsList();
+        call.enqueue(new Callback<List<Directors>>() {
+            @Override
+            public void onResponse(Call<List<Directors>> call, Response<List<Directors>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this,"Code: " + response.code() , Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                List<Directors> directorsListd = response.body();
+                for (Directors directors : directorsListd) {
+
+                    directorsList.add(directors);
+                }
+
+                PutDataIntoRecylerViewdr(directorsList);
+            }
+            @Override
+            public void onFailure(Call<List<Directors>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Error: " + t.getMessage() , Toast.LENGTH_LONG).show();
+                t.printStackTrace();
+
+            }
+        });
+
+    }
     private void PutDataIntoRecylerView(List<RecommendMovie> recommendMovieList) {
 
         myAdapter = new MyAdapter(this, recommendMovieList);
@@ -82,5 +124,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void PutDataIntoRecylerViewdr(List<Directors> directorsList) {
+
+
+        myAdaperD = new MyAdaperD(this, directorsList);
+        recyclerViewDirectors.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewDirectors.setAdapter(myAdaperD);
+
+
+    }
+
+
+
+
+
+
 
 }

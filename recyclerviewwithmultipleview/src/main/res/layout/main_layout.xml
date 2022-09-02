@@ -13,7 +13,6 @@
         android:orientation="vertical">
 
         <include layout="@layout/item_title" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recylerViewMovie"
             android:layout_width="match_parent"

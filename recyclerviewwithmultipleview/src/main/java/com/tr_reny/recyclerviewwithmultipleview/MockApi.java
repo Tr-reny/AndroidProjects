@@ -13,4 +13,8 @@ public interface MockApi {
 
     @GET("marvel")
     Call<List<RecommendMovie>> getRecommendMovie();
+
+    @GET("opvAb8")
+    Call<List<Directors>> getDirectorsList();
+
 }
