@@ -16,12 +16,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        //retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
     }
 }
