@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void getRecommendMovie() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://www.simplifiedcoding.net/demos/")
+                .baseUrl("https://api.jsonserve.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

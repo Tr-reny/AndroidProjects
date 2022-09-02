@@ -7,11 +7,11 @@ import retrofit2.http.GET;
 
 public interface MockApi {
 
+//movie https://api.jsonserve.com/uPBkda
+//directors https://api.jsonserve.com/opvAb8
 
-    //https://60d194a45b017400178f3e51.mockapi.io/movies
-    //https://60d194a45b017400178f3e51.mockapi.io/directors
 
-    @GET("marvel")
+    @GET("uPBkda")
     Call<List<RecommendMovie>> getRecommendMovie();
 
     @GET("opvAb8")
