@@ -7,29 +7,29 @@
     tools:context=".MainActivity">
 
 
- <include layout="@layout/main_layout" />
+    <include layout="@layout/main_layout" />
 
-   <!--
-    // Original Design
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <!--
+     // Original Design
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
 
-        <include layout="@layout/item_title" />
+         <include layout="@layout/item_title" />
 
-        <include layout="@layout/item_movie" />
+         <include layout="@layout/item_movie" />
 
-        <include layout="@layout/item_movie" />
+         <include layout="@layout/item_movie" />
 
 
-        <include layout="@layout/item_director_title" />
+         <include layout="@layout/item_director_title" />
 
-        <include layout="@layout/item_director" />
+         <include layout="@layout/item_director" />
 
-        <include layout="@layout/item_director" />
+         <include layout="@layout/item_director" />
 
-        <include layout="@layout/item_director" />
-    </LinearLayout>-->
+         <include layout="@layout/item_director" />
+     </LinearLayout>-->
 
 </androidx.core.widget.NestedScrollView>

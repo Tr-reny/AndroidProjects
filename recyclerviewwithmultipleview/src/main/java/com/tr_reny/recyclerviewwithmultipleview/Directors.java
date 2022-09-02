@@ -1,7 +1,7 @@
 package com.tr_reny.recyclerviewwithmultipleview;
 
 public class Directors {
-    private String id,name,avatar,movie_count;
+    private String id, name, avatar, movie_count;
 
     //getters
     public String getId() {

@@ -38,6 +38,7 @@ public class MyAdaperD extends RecyclerView.Adapter<MyAdaperD.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.name.setText(directorsList.get(position).getName());
+        holder.movie_count.setText(directorsList.get(position).getMovie_count());
         //Glide
         Glide.with(mContext)
                 .load(directorsList.get(position).getAvatar())
@@ -54,10 +55,13 @@ public class MyAdaperD extends RecyclerView.Adapter<MyAdaperD.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView avator;
         TextView name;
+        TextView movie_count;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.text_view_name);
-            avator =itemView.findViewById(R.id.image_view_director);
+            avator = itemView.findViewById(R.id.image_view_director);
+            movie_count = itemView.findViewById(R.id.text_movie_count);
         }
     }
 }

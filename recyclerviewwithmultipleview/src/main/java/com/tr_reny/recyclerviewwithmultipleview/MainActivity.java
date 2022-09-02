@@ -21,9 +21,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Reny K. on 31st Aug 2022
  * This is an app that implements multiple RecyclerView in One Layout
- * */
+ */
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerViewMovie , recyclerViewDirectors;
+    private RecyclerView recyclerViewMovie, recyclerViewDirectors;
     private MockApi mockApi;
     private List<RecommendMovie> recommendMovieList;
     private MyAdapter myAdapter;
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         getDirectorList();
 
     }
+
     private void getRecommendMovie() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.jsonserve.com/")
@@ -58,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<RecommendMovie>>() {
             @Override
             public void onResponse(Call<List<RecommendMovie>> call, Response<List<RecommendMovie>> response) {
-                if (!response.isSuccessful()){
-                    Toast.makeText(MainActivity.this,"Code: " + response.code() , Toast.LENGTH_LONG).show();
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Code: " + response.code(), Toast.LENGTH_LONG).show();
                     return;
                 }
                 List<RecommendMovie> MovieList = response.body();
-                for (RecommendMovie recommendMovie : MovieList){
+                for (RecommendMovie recommendMovie : MovieList) {
 
                     recommendMovieList.add(recommendMovie);
 
@@ -74,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<RecommendMovie>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage() , Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
                 t.printStackTrace();
 
             }
         });
     }
 
-    private void getDirectorList(){
+    private void getDirectorList() {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.jsonserve.com/")
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Directors>> call, Response<List<Directors>> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this,"Code: " + response.code() , Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Code: " + response.code(), Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -107,15 +108,17 @@ public class MainActivity extends AppCompatActivity {
 
                 PutDataIntoRecylerViewdr(directorsList);
             }
+
             @Override
             public void onFailure(Call<List<Directors>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage() , Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
                 t.printStackTrace();
 
             }
         });
 
     }
+
     private void PutDataIntoRecylerView(List<RecommendMovie> recommendMovieList) {
 
         myAdapter = new MyAdapter(this, recommendMovieList);
@@ -134,11 +137,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
-
 
 
 }
