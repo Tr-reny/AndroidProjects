@@ -1,11 +1,14 @@
 package com.tr_reny.rapidapiexample;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -21,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private RapidApi rapidApi;
     private List<News> newsList;
+    private RecyclerView recyclerView;
+
+
     private TextView tv_results;
 
     @Override
@@ -28,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv_results = findViewById(R.id.text_view_results);
+       // tv_results = findViewById(R.id.text_view_results);
+        newsList = new ArrayList<>();
+        recyclerView = findViewById(R.id.recyclerView);
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -51,16 +59,18 @@ public class MainActivity extends AppCompatActivity {
                    return;
                }
 
-               List<News> newsList = response.body();
-               for (News news : newsList){
-                   String content = "";
+               List<News> newsList1 = response.body();
+               for (News news : newsList1){
+              /*     String content = "";
                     content += "title: " + news.getTitle() + "\n";
                     content += "Source: " + news.getMsource() + "\n\n";
 
-                    tv_results.append(content);
+                    tv_results.append(content);*/
+
+                    newsList.add(news);
                }
 
-
+               PutDataIntoRecylerView(newsList);
 
            }
 
@@ -71,6 +81,16 @@ public class MainActivity extends AppCompatActivity {
 
            }
        });
+
+
+    }
+
+
+    private void PutDataIntoRecylerView(List<News> newsList) {
+
+        MyAdapter myAdapter = new MyAdapter(this,newsList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myAdapter);
 
 
     }
