@@ -13,14 +13,13 @@
         android:layout_height="wrap_content">
 
     <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
-    <include layout="@layout/item_news"/>
+  <TextView
+      android:layout_width="match_parent"
+      android:id="@+id/text_view_results"
+      android:textColor="@color/black"
+      android:textSize="18sp"
+      android:layout_height="match_parent"/>
+
 
     </LinearLayout>
 

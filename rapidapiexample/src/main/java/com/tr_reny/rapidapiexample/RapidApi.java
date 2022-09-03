@@ -15,6 +15,6 @@ public interface RapidApi {
 
     @GET("news")
     Call<List<News>> getNews( @Header("X-RapidAPI-Host") String api,
-                              @Header("X-RapidAPI-Key") String apiKey,
-                              @Query("query") String query_str);
+                              @Header("X-RapidAPI-Key") String apiKey);
+//                              @Query("query") String query_str);
 }
