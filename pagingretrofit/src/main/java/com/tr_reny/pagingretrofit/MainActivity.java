@@ -1,9 +1,11 @@
 package com.tr_reny.pagingretrofit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Initialize variable
+    private ProgressBar progressBar;
+    private NestedScrollView nestedScrollView;
     private RecyclerView recyclerView;
     private List<Photos> photosList;
 
@@ -29,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //assign variable
+        progressBar = findViewById(R.id.progressBar);
+        nestedScrollView = findViewById(R.id.scroll_view);
         recyclerView = findViewById(R.id.recyclerView);
-/*
         photosList = new ArrayList<>();
 
 
@@ -39,6 +46,5 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-*/
     }
 }
