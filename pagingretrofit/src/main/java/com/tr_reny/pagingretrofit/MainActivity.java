@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recyclerView);
-/*        photosList = new ArrayList<>();
+/*
+        photosList = new ArrayList<>();
 
 
         //retrofit
@@ -38,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        */
+*/
     }
 }
