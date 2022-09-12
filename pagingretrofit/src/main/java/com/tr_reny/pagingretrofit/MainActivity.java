@@ -2,14 +2,19 @@ package com.tr_reny.pagingretrofit;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Photos> photosList;
     private MyAdapter myAdapter;
+    int page = 1, limit = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +47,71 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         photosList = new ArrayList<>();
 
+        getData(page,limit);
 
+
+
+
+    }
+
+
+    private void getData(int page, int limit){
         //retrofit
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
+        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        Call<List<Photos>> call  = jsonPlaceHolderApi.getPhotos(page,limit);
+
+
+        call.enqueue(new Callback<List<Photos>>() {
+            @Override
+            public void onResponse(Call<List<Photos>> call, Response<List<Photos>> response) {
+                if (response.isSuccessful() && response.body() !=null){
+                    //When response is successfull and not empty
+                    //Hide progressbar
+
+                    progressBar.setVisibility(View.GONE);
+
+                    List<Photos> photos = response.body();
+                    for (Photos photos1 : photos){
+                  /*  String content = "";
+                    content += "Name: " + marvel.getName() + "\n";
+                    content += "RealName: " + marvel.getRealname() + "\n";
+                    content += "Team: " + marvel.getTeam() + "\n";
+                    content += "Bio: " + marvel.getBio() + "\n";
+                    content += "ImageUrl: " + marvel.getImageurl() + "\n\n";
+
+                    textViewResults.append(content);*/
+
+                        photosList.add(photos1);
+                    }
+                    PutDataIntoRecylerView(photosList);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Photos>> call, Throwable t) {
+                t.printStackTrace();
+
+            }
+        });
+
+
     }
+
+
+
+    private void PutDataIntoRecylerView(ArrayList<Photos> photosList) {
+
+        MyAdapter myAdapter = new MyAdapter(this, photosList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myAdapter);
+
+
+    }
+}
 }
