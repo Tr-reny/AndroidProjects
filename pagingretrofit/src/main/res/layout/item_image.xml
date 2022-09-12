@@ -6,6 +6,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Captain America" />
+
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"

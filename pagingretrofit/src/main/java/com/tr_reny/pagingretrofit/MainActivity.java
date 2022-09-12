@@ -1,21 +1,16 @@
 package com.tr_reny.pagingretrofit;
 
+import android.os.Bundle;
+import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
-
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import java.util.ArrayList;
-import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import static com.tr_reny.pagingretrofit.PaginationListener.PAGE_START;
 
 /**
  * Project Created on 4th Sep 2022 by Reny Kipkoech
@@ -25,78 +20,98 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * It will consume less bandwidth. Also, fewer resources resulting in a smooth app and nice user experience.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
 
-    //Initialize variable
-    private ProgressBar progressBar;
-    private RecyclerView recyclerView;
-    private ArrayList<Photos> photosList;
-    private PostRecyclerAdapter myAdapter;
+    private static final String TAG = "MainActivity";
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
+    @BindView(R.id.swipeRefresh)
+    SwipeRefreshLayout swipeRefresh;
+    private PostRecyclerAdapter adapter;
+    private int currentPage = PAGE_START;
+    private boolean isLastPage = false;
+    private int totalPage = 10;
+    private boolean isLoading = false;
+    int itemCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        //assign variable
-        progressBar = findViewById(R.id.progressBar);
-        recyclerView = findViewById(R.id.recyclerView);
-        photosList = new ArrayList<>();
+        swipeRefresh.setOnRefreshListener(this);
+        mRecyclerView.setHasFixedSize(true);
+        // use a linear layout manager
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+        adapter = new PostRecyclerAdapter(new ArrayList<>());
+        mRecyclerView.setAdapter(adapter);
+        doApiCall();
 
-        getData();
-
-
-
-    }
-
-
-    private void getData() {
-        //retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        Call<List<Photos>> call = jsonPlaceHolderApi.getPhotos();
-
-
-        call.enqueue(new Callback<List<Photos>>() {
+        /**
+         * add scroll listener while user reach in bottom load more will call
+         */
+        mRecyclerView.addOnScrollListener(new PaginationListener(layoutManager) {
             @Override
-            public void onResponse(Call<List<Photos>> call, Response<List<Photos>> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    //When response is successfull and not empty
-                    //Hide progressbar
-
-                    progressBar.setVisibility(View.GONE);
-
-                    List<Photos> photos = response.body();
-                    for (Photos photos1 : photos) {
-
-                        photosList.add(photos1);
-                    }
-                    PutDataIntoRecylerView(photosList);
-
-                }
+            protected void loadMoreItems() {
+                isLoading = true;
+                currentPage++;
+                doApiCall();
             }
-
             @Override
-            public void onFailure(Call<List<Photos>> call, Throwable t) {
-                t.printStackTrace();
-
+            public boolean isLastPage() {
+                return isLastPage;
+            }
+            @Override
+            public boolean isLoading() {
+                return isLoading;
             }
         });
 
-
     }
 
 
-    private void PutDataIntoRecylerView(List<Photos> photosArrayList) {
+    /**
+     * do api call here to fetch data from server
+     * In example i'm adding data manually
+     */
+    private void doApiCall() {
+        final ArrayList<Photos> items = new ArrayList<>();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; i++) {
+                    itemCount++;
 
-        myAdapter = new PostRecyclerAdapter(this, photosArrayList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(myAdapter);
+                    Photos photos = new Photos();
 
-
+                   photos.setTitle(getString(R.string.text_title) + itemCount);
+                    postItem.setDescription(getString(R.string.text_description));
+                    items.add(photos);
+                }
+                /**
+                 * manage progress view
+                 */
+                if (currentPage != PAGE_START) adapter.removeLoading();
+                adapter.addItems(items);
+                swipeRefresh.setRefreshing(false);
+                // check weather is last page or not
+                if (currentPage < totalPage) {
+                    adapter.addLoading();
+                } else {
+                    isLastPage = true;
+                }
+                isLoading = false;
+            }
+        }, 1500);
+    }
+    @Override
+    public void onRefresh() {
+        itemCount = 0;
+        currentPage = PAGE_START;
+        isLastPage = false;
+        adapter.clear();
+        doApiCall();
     }
 }
