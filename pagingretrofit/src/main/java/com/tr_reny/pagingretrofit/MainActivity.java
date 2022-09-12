@@ -1,5 +1,6 @@
 package com.tr_reny.pagingretrofit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,8 +50,20 @@ public class MainActivity extends AppCompatActivity {
 
         getData(page,limit);
 
+        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(@NonNull NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
 
+                if (scrollY ==v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()){
 
+                    page++;
+                    progressBar.setVisibility(View.VISIBLE);
+                    getData(page,limit);
+                }
+
+            }
+        });
+        
 
     }
 
