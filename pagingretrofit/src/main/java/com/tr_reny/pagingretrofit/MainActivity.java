@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private NestedScrollView nestedScrollView;
     private RecyclerView recyclerView;
-    private List<Photos> photosList;
+    private ArrayList<Photos> photosList;
     private MyAdapter myAdapter;
     int page = 1, limit = 10;
 
@@ -77,14 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
                     List<Photos> photos = response.body();
                     for (Photos photos1 : photos){
-                  /*  String content = "";
-                    content += "Name: " + marvel.getName() + "\n";
-                    content += "RealName: " + marvel.getRealname() + "\n";
-                    content += "Team: " + marvel.getTeam() + "\n";
-                    content += "Bio: " + marvel.getBio() + "\n";
-                    content += "ImageUrl: " + marvel.getImageurl() + "\n\n";
-
-                    textViewResults.append(content);*/
 
                         photosList.add(photos1);
                     }
@@ -105,13 +97,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void PutDataIntoRecylerView(ArrayList<Photos> photosList) {
+    private void PutDataIntoRecylerView(ArrayList<Photos> photosArrayList) {
 
-        MyAdapter myAdapter = new MyAdapter(this, photosList);
+        myAdapter = new MyAdapter(this, photosArrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 
 
     }
-}
 }
