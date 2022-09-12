@@ -44,4 +44,8 @@ dependencies {
     //pagingRecycler
     implementation 'com.github.Batterii:PagingRecycler:v1.1.1'
 
+    // code generator for view
+    implementation "com.jakewharton:butterknife:10.1.0"
+    annotationProcessor "com.jakewharton:butterknife-compiler:10.1.0"
+
 }

@@ -20,6 +20,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private Context mContext;
     private List<Photos> photosArrayList;
+    private static final int LOADING = 0;
+    private static final int ITEM = 1;
+    private boolean isLoadingAdded = false;
 
     public MyAdapter(Context mContext, List<Photos> photosArrayList) {
         this.mContext = mContext;
