@@ -11,9 +11,6 @@ public interface JsonPlaceHolderApi {
     //We will separate page by "albumId"
 
     @GET("photos")
-    Call<List<Photos>> getPhotos(
-            @Query("page") int page,
-            @Query("limit") int limit
-    );
+    Call<List<Photos>> getPhotos();
 
 }
