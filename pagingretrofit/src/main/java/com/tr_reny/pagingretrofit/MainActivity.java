@@ -1,6 +1,5 @@
 package com.tr_reny.pagingretrofit;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,17 +24,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Suppose you have 5000 images data from a backend API and you do not want load whole 5000 images data at once
  * that time you can use the paging library. This only load small amounts of data from your large data set.
  * It will consume less bandwidth. Also, fewer resources resulting in a smooth app and nice user experience.
- * */
+ */
 
 public class MainActivity extends AppCompatActivity {
 
     //Initialize variable
     private ProgressBar progressBar;
-    private NestedScrollView nestedScrollView;
     private RecyclerView recyclerView;
     private ArrayList<Photos> photosList;
     private MyAdapter myAdapter;
-    int page = 1, limit = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,33 +41,17 @@ public class MainActivity extends AppCompatActivity {
 
         //assign variable
         progressBar = findViewById(R.id.progressBar);
-        nestedScrollView = findViewById(R.id.scroll_view);
         recyclerView = findViewById(R.id.recyclerView);
         photosList = new ArrayList<>();
 
-        getData(page,limit);
-
-        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(@NonNull NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-
-                if (scrollY ==v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()){
-
-                    page++;
-                    progressBar.setVisibility(View.VISIBLE);
-                    getData(page,limit);
-                }
-
-            }
-        });
-
+        getData();
 
 
 
     }
 
 
-    private void getData(int page, int limit){
+    private void getData() {
         //retrofit
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
@@ -78,20 +59,20 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        Call<List<Photos>> call  = jsonPlaceHolderApi.getPhotos(page,limit);
+        Call<List<Photos>> call = jsonPlaceHolderApi.getPhotos();
 
 
         call.enqueue(new Callback<List<Photos>>() {
             @Override
             public void onResponse(Call<List<Photos>> call, Response<List<Photos>> response) {
-                if (response.isSuccessful() && response.body() !=null){
+                if (response.isSuccessful() && response.body() != null) {
                     //When response is successfull and not empty
                     //Hide progressbar
 
                     progressBar.setVisibility(View.GONE);
 
                     List<Photos> photos = response.body();
-                    for (Photos photos1 : photos){
+                    for (Photos photos1 : photos) {
 
                         photosList.add(photos1);
                     }
@@ -111,8 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    private void PutDataIntoRecylerView(ArrayList<Photos> photosArrayList) {
+    private void PutDataIntoRecylerView(List<Photos> photosArrayList) {
 
         myAdapter = new MyAdapter(this, photosArrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

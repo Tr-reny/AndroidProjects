@@ -19,9 +19,9 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private Context mContext;
-    private ArrayList<Photos> photosArrayList;
+    private List<Photos> photosArrayList;
 
-    public MyAdapter(Context mContext, ArrayList<Photos> photosArrayList) {
+    public MyAdapter(Context mContext, List<Photos> photosArrayList) {
         this.mContext = mContext;
         this.photosArrayList = photosArrayList;
     }
@@ -31,7 +31,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        v = layoutInflater.inflate(R.layout.item_image,parent,false);
+        v = layoutInflater.inflate(R.layout.item_image, parent, false);
         return new MyViewHolder(v);
     }
 

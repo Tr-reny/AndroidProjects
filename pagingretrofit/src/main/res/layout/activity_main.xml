@@ -24,8 +24,8 @@
         android:layout_marginBottom="30dp"
         android:background="#FFFF"
         android:padding="8dp"
-        app:cardCornerRadius="40dp"
         android:visibility="gone"
+        app:cardCornerRadius="40dp"
         app:contentPadding="8dp">
 
         <ProgressBar
