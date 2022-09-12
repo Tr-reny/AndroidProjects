@@ -14,7 +14,7 @@ public interface RapidApi {
     // URL 'https://crypto-news-live3.p.rapidapi.com/news',
 
     @GET("news")
-    Call<List<News>> getNews( @Header("X-RapidAPI-Host") String api,
-                              @Header("X-RapidAPI-Key") String apiKey);
+    Call<List<News>> getNews(@Header("X-RapidAPI-Host") String api,
+                             @Header("X-RapidAPI-Key") String apiKey);
 //                              @Query("query") String query_str);
 }

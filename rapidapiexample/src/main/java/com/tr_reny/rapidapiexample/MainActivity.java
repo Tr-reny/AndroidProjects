@@ -16,9 +16,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-/**Created by Reny K. On 2nd Sep 2022
+
+/**
+ * Created by Reny K. On 2nd Sep 2022
  * This is a Simple app which GET NewsAPI from RapidAPI and Displays it RecyclerView
- * */
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // tv_results = findViewById(R.id.text_view_results);
+        // tv_results = findViewById(R.id.text_view_results);
         newsList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -49,18 +51,18 @@ public class MainActivity extends AppCompatActivity {
         getNews();
     }
 
-    private void getNews(){
-       Call<List<News>> call = rapidApi.getNews("crypto-news-live3.p.rapidapi.com","7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
-       call.enqueue(new Callback<List<News>>() {
-           @Override
-           public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-               if (!response.isSuccessful()){
-                   Toast.makeText(MainActivity.this,"Code: " + response.code(),Toast.LENGTH_LONG).show();
-                   return;
-               }
+    private void getNews() {
+        Call<List<News>> call = rapidApi.getNews("crypto-news-live3.p.rapidapi.com", "7b17418753msh4f16608e0aa78d7p1a6fe6jsnfc06e90efe18");
+        call.enqueue(new Callback<List<News>>() {
+            @Override
+            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Code: " + response.code(), Toast.LENGTH_LONG).show();
+                    return;
+                }
 
-               List<News> newsList1 = response.body();
-               for (News news : newsList1){
+                List<News> newsList1 = response.body();
+                for (News news : newsList1) {
               /*     String content = "";
                     content += "title: " + news.getTitle() + "\n";
                     content += "Source: " + news.getMsource() + "\n\n";
@@ -68,19 +70,19 @@ public class MainActivity extends AppCompatActivity {
                     tv_results.append(content);*/
 
                     newsList.add(news);
-               }
+                }
 
-               PutDataIntoRecylerView(newsList);
+                PutDataIntoRecylerView(newsList);
 
-           }
+            }
 
-           @Override
-           public void onFailure(Call<List<News>> call, Throwable t) {
-               Toast.makeText(MainActivity.this, "Error: " + t.getMessage() , Toast.LENGTH_LONG).show();
-               t.printStackTrace();
+            @Override
+            public void onFailure(Call<List<News>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                t.printStackTrace();
 
-           }
-       });
+            }
+        });
 
 
     }
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void PutDataIntoRecylerView(List<News> newsList) {
 
-        MyAdapter myAdapter = new MyAdapter(this,newsList);
+        MyAdapter myAdapter = new MyAdapter(this, newsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 
