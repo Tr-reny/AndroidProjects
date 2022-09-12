@@ -1,7 +1,6 @@
 package com.tr_reny.pagingretrofit;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
     private ArrayList<Photos> photosList;
-    private MyAdapter myAdapter;
+    private PostRecyclerAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void PutDataIntoRecylerView(List<Photos> photosArrayList) {
 
-        myAdapter = new MyAdapter(this, photosArrayList);
+        myAdapter = new PostRecyclerAdapter(this, photosArrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 
