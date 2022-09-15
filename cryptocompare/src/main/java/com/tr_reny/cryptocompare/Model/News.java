@@ -11,4 +11,27 @@ public class News {
     public RateLimit rateLimit;
     public Boolean hasWarning;
 
+    public Integer getType() {
+        return type;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public List<Object> getPromoted() {
+        return promoted;
+    }
+
+    public List<Datum> getData() {
+        return data;
+    }
+
+    public RateLimit getRateLimit() {
+        return rateLimit;
+    }
+
+    public Boolean getHasWarning() {
+        return hasWarning;
+    }
 }
