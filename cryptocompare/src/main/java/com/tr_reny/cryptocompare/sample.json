@@ -1,0 +1,1009 @@
+{
+  "Type": 100,
+  "Message": "News list successfully returned",
+  "Promoted": [],
+  "Data": [
+    {
+      "id": "28035610",
+      "guid": "https://cointelegraph.com/news/magic-eden-defends-launch-of-nft-royalty-enforcement-tool",
+      "published_on": 1663222181,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Magic Eden defends launch of NFT royalty enforcement tool",
+      "url": "https://cointelegraph.com/news/magic-eden-defends-launch-of-nft-royalty-enforcement-tool",
+      "source": "cointelegraph",
+      "body": "MetaShield works by enabling creators to flag an NFT or blur the image if the listed or traded NFT bypasses creator royalties.",
+      "tags": "NFT Marketplaces|Magic Eden|MetaShield|Creator Royalty Fees|X2Y2|sudoswap",
+      "categories": "Other",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035560",
+      "guid": "https://cointelegraph.com/news/michael-saylor-slams-misinformation-about-bitcoin-s-energy-use",
+      "published_on": 1663221599,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Michael Saylor slams \"misinformation\" about Bitcoin's energy use",
+      "url": "https://cointelegraph.com/news/michael-saylor-slams-misinformation-about-bitcoin-s-energy-use",
+      "source": "cointelegraph",
+      "body": "Michael Saylor claims Bitcoin mining could become a clean, profitable, and modern industry that generates hard currency for remote locations in the developing world. ",
+      "tags": "MicroStrategy|Michael Saylor|Bitcoin mining|proof of stake|environmental impacts|crypto assets",
+      "categories": "BTC|Mining",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035558",
+      "guid": "https://cointelegraph.com/news/celsius-bankruptcy-judge-gives-the-nod-for-independent-examiner-probe",
+      "published_on": 1663221487,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Celsius bankruptcy judge gives the nod for independent examiner probe",
+      "url": "https://cointelegraph.com/news/celsius-bankruptcy-judge-gives-the-nod-for-independent-examiner-probe",
+      "source": "cointelegraph",
+      "body": "Following a motion in August, U.S. Bankruptcy Judge Martin Glenn has signed off on a request to appoint an examiner in the Celsius case. ",
+      "tags": "Celsius|Chapter 11|Trustee|BnkToTheFuture|Mahinsky|Examiner",
+      "categories": "Other",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035446",
+      "guid": "https://cointelegraph.com/news/it-s-on-where-to-catch-the-ethereum-merge-live",
+      "published_on": 1663210151,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "It's on! Where to catch the Ethereum Merge live",
+      "url": "https://cointelegraph.com/news/it-s-on-where-to-catch-the-ethereum-merge-live",
+      "source": "cointelegraph",
+      "body": "The Ethereum Merge will occur when the network reaches a total terminal difficulty of 58750000000000000000000. ",
+      "tags": "Ethereum|Ethereum network|The Merge|proof-of-stake|proof-of-work",
+      "categories": "ETH",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035442",
+      "guid": "https://cointelegraph.com/news/the-launch-of-a-rocket-observers-on-the-future-of-ethereum-post-merge",
+      "published_on": 1663207842,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "The 'launch of a rocket' — Observers on the future of Ethereum post-Merge",
+      "url": "https://cointelegraph.com/news/the-launch-of-a-rocket-observers-on-the-future-of-ethereum-post-merge",
+      "source": "cointelegraph",
+      "body": "With the Ethereum Merge only hours away, Cointelegraph spoke to industry experts about the transition to proof-of-stake today and what to look out for. ",
+      "tags": "StarkWare|Lubin|Ethereum Foundation|Bloomberg|Bybit|Merge",
+      "categories": "ETH",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035308",
+      "guid": "https://cointelegraph.com/news/hardware-wallets-to-take-similar-approach-to-potential-ethereum-hard-fork",
+      "published_on": 1663192381,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Hardware wallets to take similar approach to potential Ethereum hard fork",
+      "url": "https://cointelegraph.com/news/hardware-wallets-to-take-similar-approach-to-potential-ethereum-hard-fork",
+      "source": "cointelegraph",
+      "body": "Forked coins have proven to be lucrative in the past. Holders of Ethereum came to possess an equivalent amount of Ethereum Classic when it forked in 2016.",
+      "tags": "Hard Fork|Ledger|Trezor|Hardware Wallet|Ethereum 2.0",
+      "categories": "Wallet|ETC",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035253",
+      "guid": "https://cointelegraph.com/news/coinbase-to-educate-users-on-policies-held-by-local-politicians-with-new-app-integration",
+      "published_on": 1663191649,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Coinbase to educate users on policies held by local politicians with new app integration",
+      "url": "https://cointelegraph.com/news/coinbase-to-educate-users-on-policies-held-by-local-politicians-with-new-app-integration",
+      "source": "cointelegraph",
+      "body": "Verified Coinbase app users will be able to see where members of congress stand on crypto policies.",
+      "tags": "Coinbase|Politics|Technology",
+      "categories": "Technology",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035226",
+      "guid": "https://cointelegraph.com/news/compound-treasury-to-let-institutions-use-digital-assets-as-collateral-when-borrowing-usd-or-usdc",
+      "published_on": 1663190304,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Compound Treasury to let institutions use digital assets as collateral when borrowing USD or USDC",
+      "url": "https://cointelegraph.com/news/compound-treasury-to-let-institutions-use-digital-assets-as-collateral-when-borrowing-usd-or-usdc",
+      "source": "cointelegraph",
+      "body": "Accredited institutions can borrow USD OR USDC starting at 6% APR, according to the company.",
+      "tags": "Compound|Stablecoin|Liquidity",
+      "categories": "COMP|Regulation",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035225",
+      "guid": "https://cointelegraph.com/news/sec-chair-gensler-holds-tight-to-his-crypto-position-in-preview-of-senate-testimony",
+      "published_on": 1663189795,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "SEC chair Gensler holds tight to his crypto position in preview of Senate testimony",
+      "url": "https://cointelegraph.com/news/sec-chair-gensler-holds-tight-to-his-crypto-position-in-preview-of-senate-testimony",
+      "source": "cointelegraph",
+      "body": "The official will testify before the Senate Committee on Banking on Sept. 15; in a transcript released early, he reiterates the primacy of securities law in crypto regulation. ",
+      "tags": "SEC|CFTC",
+      "categories": "Regulation",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035154",
+      "guid": "https://cointelegraph.com/news/apollo-dao-to-close-vaults-on-terra-classic",
+      "published_on": 1663188300,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Apollo DAO to close vaults on Terra Classic",
+      "url": "https://cointelegraph.com/news/apollo-dao-to-close-vaults-on-terra-classic",
+      "source": "cointelegraph",
+      "body": "The protocol's TVL has plunged from around $200 million in Sept.2021 to less than $125k now. ",
+      "tags": "Cryptocurrencies|Apollo DAO|Terra Luna|Do Kwon",
+      "categories": "LUNA",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035085",
+      "guid": "https://cointelegraph.com/news/cdc-gives-nod-to-lummis-gillibrand-bill-in-proposed-amicus-brief-in-sec-v-ripple-case",
+      "published_on": 1663185600,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "CDC gives nod to Lummis-Gillibrand bill in proposed amicus brief in SEC v. Ripple case",
+      "url": "https://cointelegraph.com/news/cdc-gives-nod-to-lummis-gillibrand-bill-in-proposed-amicus-brief-in-sec-v-ripple-case",
+      "source": "cointelegraph",
+      "body": "The Chamber of Digital Commerce has requested to file an amicus brief in the protracted SEC case against Ripple Labs and supports legislating to clear up legal gray area.",
+      "tags": "SEC|Ripple|Chamber of Digital Commerce",
+      "categories": "Regulation|XRP|Business",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28035061",
+      "guid": "https://cointelegraph.com/news/starbucks-announces-nft-experience-nifty-newsletter-sept-7-13",
+      "published_on": 1663183800,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Starbucks announces NFT experience: Nifty Newsletter, Sept. 7–13",
+      "url": "https://cointelegraph.com/news/starbucks-announces-nft-experience-nifty-newsletter-sept-7-13",
+      "source": "cointelegraph",
+      "body": "Sony Music is preparing to venture into NFTs as the firm filed trademark applications for audio and video recordings. ",
+      "tags": "NFT Newsletter",
+      "categories": "Other",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28034988",
+      "guid": "https://cointelegraph.com/news/price-analysis-9-14-btc-eth-bnb-xrp-ada-sol-doge-dot-matic-shib",
+      "published_on": 1663182300,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Price analysis 9/14: BTC, ETH, BNB, XRP, ADA, SOL, DOGE, DOT, MATIC, SHIB",
+      "url": "https://cointelegraph.com/news/price-analysis-9-14-btc-eth-bnb-xrp-ada-sol-doge-dot-matic-shib",
+      "source": "cointelegraph",
+      "body": "Bitcoin is struggling to find support in the $20,000 zone, which is negatively impacting investor sentiment and weighing on most altcoin prices.",
+      "tags": "Markets|Bitcoin|Ethereum|Binance Coin|Ripple|Cardano|Solana|Dogecoin|Polkadot|Polygon|Shiba Inu|Price analysis",
+      "categories": "BTC|Market|ADA|DOGE|DOT",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28034983",
+      "guid": "https://cointelegraph.com/news/only-10-hours-to-the-ethereum-merge-here-s-what-you-need-to-know",
+      "published_on": 1663182000,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Only 10 hours to the Ethereum Merge: Here's what you need to know",
+      "url": "https://cointelegraph.com/news/only-10-hours-to-the-ethereum-merge-here-s-what-you-need-to-know",
+      "source": "cointelegraph",
+      "body": "The Ethereum blockchain is set to bid farewell to proof-of-work, and welcome proof-of-stake as Mainnet merges with the Beacon Chain.",
+      "tags": "Ethereum|the merge|proof-of-work|proof-of-stake|Merge.",
+      "categories": "ETH|Blockchain",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28034951",
+      "guid": "https://cointelegraph.com/news/volatility-expected-as-490m-in-eth-options-expire-shortly-after-the-ethereum-merge",
+      "published_on": 1663178940,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Volatility expected as $490M in ETH options expire shortly after the Ethereum Merge",
+      "url": "https://cointelegraph.com/news/volatility-expected-as-490m-in-eth-options-expire-shortly-after-the-ethereum-merge",
+      "source": "cointelegraph",
+      "body": "The outcome of the Ethereum Merge will be a primary price drive that dictates whether ETH bears profit from this week’s $490 million options expiry. ",
+      "tags": "Market|Ethereum|Merge|options|derivatives|expiry",
+      "categories": "ETH|Business|Market|Trading",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28034943",
+      "guid": "https://cointelegraph.com/news/tesla-launches-new-cyberwhistle-that-can-only-be-bought-using-dogecoin",
+      "published_on": 1663178400,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Tesla launches new Cyberwhistle that can only be bought using Dogecoin",
+      "url": "https://cointelegraph.com/news/tesla-launches-new-cyberwhistle-that-can-only-be-bought-using-dogecoin",
+      "source": "cointelegraph",
+      "body": "\"Blow the whistle! But you must pay in Doge,\" says Tesla's CEO Elon Musk. ",
+      "tags": "Cryptocurrencies|Tesla|Cyberwhistle|Doge",
+      "categories": "DOGE",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28034368",
+      "guid": "https://cointelegraph.com/news/us-treasury-sanctions-iran-based-ransomware-group-and-associated-bitcoin-addresses",
+      "published_on": 1663175700,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "US Treasury sanctions Iran-based ransomware group and associated Bitcoin addresses",
+      "url": "https://cointelegraph.com/news/us-treasury-sanctions-iran-based-ransomware-group-and-associated-bitcoin-addresses",
+      "source": "cointelegraph",
+      "body": "The Office of Foreign Asset Control sanctioned 7 Bitcoin addresses allegedly connected to Iranian nationals Ahmad Khatibi Aghada and Amir Hossein Nikaeed Ravar.",
+      "tags": "regulation|united states|iran|ransomware|sanctions",
+      "categories": "BTC|Regulation",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28033929",
+      "guid": "https://cointelegraph.com/news/cv-summit-2022-panel-the-importance-of-accessibility-and-community-education",
+      "published_on": 1663173583,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "CV Summit 2022 panel: The importance of accessibility and community education",
+      "url": "https://cointelegraph.com/news/cv-summit-2022-panel-the-importance-of-accessibility-and-community-education",
+      "source": "cointelegraph",
+      "body": "Cointelegraph’s editor-in-chief Kristina Cornèr moderated a panel discussion revolving around accessibility and education in the blockchain sector. ",
+      "tags": "CV Summit 2022",
+      "categories": "Blockchain",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28033326",
+      "guid": "https://cointelegraph.com/news/ethereum-s-merge-will-affect-more-than-just-its-blockchain",
+      "published_on": 1663169528,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Ethereum’s Merge will affect more than just its blockchain",
+      "url": "https://cointelegraph.com/news/ethereum-s-merge-will-affect-more-than-just-its-blockchain",
+      "source": "cointelegraph",
+      "body": "Ethereum's Merge will have a vast impact on cryptocurrency, particularly on some — like decentralized application (DApp) developers — who rely on Ethereum to conduct their business.",
+      "tags": "Ethereum|Ethereum Merge|Ethereum 2.0",
+      "categories": "ETH|Blockchain|Business",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28033236",
+      "guid": "https://cointelegraph.com/news/want-to-keep-exchanges-like-celsius-from-seizing-your-money-be-a-custody-client",
+      "published_on": 1663167418,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Want to keep exchanges like Celsius from seizing your money? Be a 'custody client'",
+      "url": "https://cointelegraph.com/news/want-to-keep-exchanges-like-celsius-from-seizing-your-money-be-a-custody-client",
+      "source": "cointelegraph",
+      "body": "Are your coins at risk of being seized by an exchange in the future? Here are some factors to consider related to using centralized exchanges.",
+      "tags": "Celsius Network|Crypto Exchanges|Crypto|Cryptocurrency",
+      "categories": "Exchange",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28033058",
+      "guid": "https://cointelegraph.com/news/analyst-on-17-6k-btc-price-bottom-bitcoin-not-there-yet",
+      "published_on": 1663164977,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Analyst on $17.6K BTC price bottom: Bitcoin 'not there yet'",
+      "url": "https://cointelegraph.com/news/analyst-on-17-6k-btc-price-bottom-bitcoin-not-there-yet",
+      "source": "cointelegraph",
+      "body": "It may be a case of \"so near yet so far\" when it comes to June's multi-year low being the next BTC price floor, warns Willy Woo.",
+      "tags": "Bitcoin|BTC price",
+      "categories": "BTC|Trading",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28033000",
+      "guid": "https://cointelegraph.com/news/bnb-chain-to-collab-with-google-cloud-to-bolster-web3-blockchain-startups",
+      "published_on": 1663164158,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "BNB Chain to collab with Google Cloud to bolster Web3, blockchain startups",
+      "url": "https://cointelegraph.com/news/bnb-chain-to-collab-with-google-cloud-to-bolster-web3-blockchain-startups",
+      "source": "cointelegraph",
+      "body": "BNB Chain ecosystem participants are set to have access to Google Cloud services in a newly formed collaboration.",
+      "tags": "Binance|BNB Chain|Google Cloud|Web3|blockchain.",
+      "categories": "Blockchain|Exchange",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28032989",
+      "guid": "https://cointelegraph.com/magazine/2022/09/14/insiders-guide-real-life-crypto-ogs-part-2",
+      "published_on": 1663163143,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Guide to real-life crypto OGs you’d meet at a party (Part 2)",
+      "url": "https://cointelegraph.com/magazine/2022/09/14/insiders-guide-real-life-crypto-ogs-part-2",
+      "source": "cointelegraph",
+      "body": "\"I think OGs are hard core believers who went all-in when nobody else was paying attention to the space.\"",
+      "tags": "Features",
+      "categories": "Other",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28032878",
+      "guid": "https://cointelegraph.com/news/boom-and-bust-how-are-defi-protocols-handling-the-bear-market",
+      "published_on": 1663161660,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Boom and bust: How are Defi protocols handling the bear market?",
+      "url": "https://cointelegraph.com/news/boom-and-bust-how-are-defi-protocols-handling-the-bear-market",
+      "source": "cointelegraph",
+      "body": " A look at how DeFi protocols have fared during the recent bear market and the importance of continuing to build during market downturns. ",
+      "tags": "Cryptocurrencies|Markets|Tokens|Technology|Trading",
+      "categories": "Market|Trading|ICO|Technology",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28032483",
+      "guid": "https://cointelegraph.com/news/fixed-interest-rates-to-create-a-defi-2-0-for-institutions-says-former-bank-exec",
+      "published_on": 1663160652,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Fixed interest rates to create a DeFi 2.0 for institutions, says former bank exec",
+      "url": "https://cointelegraph.com/news/fixed-interest-rates-to-create-a-defi-2-0-for-institutions-says-former-bank-exec",
+      "source": "cointelegraph",
+      "body": "In its latest seed funding Infinity Exchange investors allied behind the need for an increase in more secure institutional investment. ",
+      "tags": "Lending|Investments",
+      "categories": "Business|Exchange|Fiat",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28032016",
+      "guid": "https://cointelegraph.com/news/blockchain-oracle-network-xy-labs-shares-start-trading-at-sec-registered-platform",
+      "published_on": 1663158600,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Blockchain oracle network XY Labs' shares start trading at SEC-registered platform",
+      "url": "https://cointelegraph.com/news/blockchain-oracle-network-xy-labs-shares-start-trading-at-sec-registered-platform",
+      "source": "cointelegraph",
+      "body": "The blockchain oracle provider said that this will be the first time that its shares will be available at a regulated trading venue.",
+      "tags": "XY Labs stock listing",
+      "categories": "Blockchain|Trading",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031884",
+      "guid": "https://cointelegraph.com/news/market-will-decide-on-post-merge-ethereum-etps-says-crypto-executive",
+      "published_on": 1663155406,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "‘Market will decide’ on post-Merge Ethereum ETPs, says crypto executive",
+      "url": "https://cointelegraph.com/news/market-will-decide-on-post-merge-ethereum-etps-says-crypto-executive",
+      "source": "cointelegraph",
+      "body": "Offering two separate Ethereum ETPs after the hard fork would allow ETC Group to ensure the most transparent and fair approach, the founder said.",
+      "tags": "Shares|Europe|Germany|Trading|Cryptocurrencies|Proof-of-Work|Proof-of-Stake|Deutsche Börse|Hard Fork",
+      "categories": "ETH|ETC|ICO|Trading",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031759",
+      "guid": "https://cointelegraph.com/explained/downsides-of-proof-of-work-and-proof-of-stake-explained",
+      "published_on": 1663153200,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Downsides of Proof-of-Work and Proof-of-Stake, explained",
+      "url": "https://cointelegraph.com/explained/downsides-of-proof-of-work-and-proof-of-stake-explained",
+      "source": "cointelegraph",
+      "body": "Not all consensus mechanisms are born equal — and the differences between major blockchains can have a huge effect on gas fees and transaction speeds.",
+      "tags": "Blockchain|Proof-of-Work|Proof-of-Stake|PPoC|Eurus|Nodes|Gas Fees|Transactions",
+      "categories": "Blockchain",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031736",
+      "guid": "https://cointelegraph.com/news/web3-is-creating-a-new-genre-of-nft-driven-music",
+      "published_on": 1663152952,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Web3 is creating a new genre of NFT-driven music",
+      "url": "https://cointelegraph.com/news/web3-is-creating-a-new-genre-of-nft-driven-music",
+      "source": "cointelegraph",
+      "body": "Cointelegraph spoke with NFT musicians and Web3 music industry natives to understand what came first: the music or the desire to make an NFT. ",
+      "tags": "Music|Artists",
+      "categories": "Other",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031520",
+      "guid": "https://cointelegraph.com/news/emerging-markets-lead-global-adoption-index-chainalysis-report",
+      "published_on": 1663149600,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Emerging markets lead global adoption index: Chainalysis report",
+      "url": "https://cointelegraph.com/news/emerging-markets-lead-global-adoption-index-chainalysis-report",
+      "source": "cointelegraph",
+      "body": "Lower-middle income countries hold a majority of the positions in the top 20 countries in terms of crypto adoption.",
+      "tags": "Crypto adoption",
+      "categories": "Market",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031476",
+      "guid": "https://cointelegraph.com/news/selling-the-rumor-biggest-ethereum-merge-staker-lido-dao-loses-40-in-30-days",
+      "published_on": 1663146600,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Selling the rumor? Biggest Ethereum Merge staker Lido DAO loses 40% in 30 days",
+      "url": "https://cointelegraph.com/news/selling-the-rumor-biggest-ethereum-merge-staker-lido-dao-loses-40-in-30-days",
+      "source": "cointelegraph",
+      "body": "LDO price faces downside risks from \"sell-the-news\" sentiment coupled with a bearish technical setup.",
+      "tags": "Lido DAO|Ethereum Staking|What is Ethereum Merge|Ethereum Proof of Stake|Technical Analysis|LDO Price",
+      "categories": "Trading|ETH",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031465",
+      "guid": "https://cointelegraph.com/news/busan-signs-mou-with-huobi-gets-more-help-for-local-crypto-exchange",
+      "published_on": 1663145912,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Busan signs MoU with Huobi, gets more help for local crypto exchange",
+      "url": "https://cointelegraph.com/news/busan-signs-mou-with-huobi-gets-more-help-for-local-crypto-exchange",
+      "source": "cointelegraph",
+      "body": "Huobi Global is the third major cryptocurrency exchange to pen a blockchain ecosystem development agreement with the South Korean city.",
+      "tags": "South Korea|Busan|Huobi|Huobi Global|blockchain city|Busan Digital Currency Exchange.",
+      "categories": "Exchange|Blockchain",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031433",
+      "guid": "https://www.cryptocompare.com/email-updates/daily/2022/sep/14/",
+      "published_on": 1663145287,
+      "imageurl": "https://images.cryptocompare.com/news/default/cryptocompare.png",
+      "title": "Market Analysis Report (14 Sep 2022)",
+      "url": "https://www.cryptocompare.com/email-updates/daily/2022/sep/14/",
+      "source": "cryptocompare",
+      "body": "Wall Street Giants Launch Crypto Exchange EDX Markets | South Korean Court Seeks Arrest of Terraform Labs’ Do Kwon | Crypto Miner Pooling Issues IOU Tokens After Halting Withdrawals",
+      "tags": "Bitcoin|Ethereum|Daily Crypto News|Cryptocurrency",
+      "categories": "Market|BTC|ETH|Exchange|ICO",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CryptoCompare",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cryptocompare.png"
+      }
+    },
+    {
+      "id": "28031438",
+      "guid": "https://cointelegraph.com/news/south-korea-issues-arrest-warrant-for-terra-founder-do-kwon",
+      "published_on": 1663145107,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "South Korea issues arrest warrant for Terra Founder Do Kwon",
+      "url": "https://cointelegraph.com/news/south-korea-issues-arrest-warrant-for-terra-founder-do-kwon",
+      "source": "cointelegraph",
+      "body": "A court located in Seoul, South Korea issued a warrant for the arrest of Kwon and five other people who are currently in Singapore. ",
+      "tags": "Do Kwon",
+      "categories": "Asia|LUNA",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031194",
+      "guid": "https://cointelegraph.com/news/btc-price-clings-to-20k-as-us-stocks-lose-the-equivalent-of-4-bitcoin-market-caps",
+      "published_on": 1663140276,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "BTC price clings to $20K as US stocks lose the equivalent of 4 Bitcoin market caps",
+      "url": "https://cointelegraph.com/news/btc-price-clings-to-20k-as-us-stocks-lose-the-equivalent-of-4-bitcoin-market-caps",
+      "source": "cointelegraph",
+      "body": "$1.6 trillion U.S. stock market losses pressure crypto markets, with BTC price action coming full circle to linger near $20,000.",
+      "tags": "Bitcoin|BTC price|inflation|stocks",
+      "categories": "BTC|Market|Trading|Business",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031190",
+      "guid": "https://cointelegraph.com/news/sci-fi-nft-comic-book-project-lays-the-foundation-for-ccg-development",
+      "published_on": 1663139593,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Sci-Fi NFT comic book project lays the foundation for CCG development",
+      "url": "https://cointelegraph.com/news/sci-fi-nft-comic-book-project-lays-the-foundation-for-ccg-development",
+      "source": "cointelegraph",
+      "body": "DAO members vote and decide on the future of the story by minting, collecting and crafting panels and pages of comic book issues.",
+      "tags": "2142 AD|NFT comic book|collectible card video game.",
+      "categories": "ETH",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031083",
+      "guid": "https://cointelegraph.com/news/bitcoin-is-the-perfect-settlement-layer-to-build-apps-on-top-of-hiro-ceo",
+      "published_on": 1663134899,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Bitcoin is the perfect settlement layer to build apps on top of: Hiro CEO",
+      "url": "https://cointelegraph.com/news/bitcoin-is-the-perfect-settlement-layer-to-build-apps-on-top-of-hiro-ceo",
+      "source": "cointelegraph",
+      "body": "Bitcoin programmability may also help further drive Bitcoin adoption as both a technical and financial layer in our society, which in turn may “drive up the price” over the long term.",
+      "tags": "Bitcoin Programmability|Bitcoin Developer Tools|Stacks|Hiro|Alex Miller",
+      "categories": "BTC|Trading",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031081",
+      "guid": "https://cointelegraph.com/news/ethw-core-to-push-on-with-ethereum-pow-fork-24-hours-after-merge",
+      "published_on": 1663134502,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "ETHW Core to push on with Ethereum PoW fork 24 hours after Merge",
+      "url": "https://cointelegraph.com/news/ethw-core-to-push-on-with-ethereum-pow-fork-24-hours-after-merge",
+      "source": "cointelegraph",
+      "body": "ETHW Core plans to split off from the main ETH blockchain and maintain a PoW version to keep ETH mining alive beyond The Merge. ",
+      "tags": "The Merge|Ethereum Merge|PoS|Ethereum PoW fork",
+      "categories": "ETH|Blockchain|Mining",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031072",
+      "guid": "https://cointelegraph.com/news/3-ways-scammers-will-try-to-fool-you-over-ethereum-s-merge",
+      "published_on": 1663132160,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "3 ways scammers will try to fool you over Ethereum’s Merge",
+      "url": "https://cointelegraph.com/news/3-ways-scammers-will-try-to-fool-you-over-ethereum-s-merge",
+      "source": "cointelegraph",
+      "body": "Besides fake ETH 2.0 tokens and malicious token airdrops, crypto users should also be on the lookout for staking pools offering attractive staking yields.",
+      "tags": "Ethereum Merge|Merge|ETH2.0|scam|hacker|scammer|staking|phishing|PolySwarm|Steve Bassi",
+      "categories": "ICO|ETH|Mining",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031023",
+      "guid": "https://cointelegraph.com/news/institutional-investors-headed-for-a-tipping-point-on-crypto-apollo-capital",
+      "published_on": 1663124269,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Institutional investors headed for a tipping point on crypto — Apollo Capital",
+      "url": "https://cointelegraph.com/news/institutional-investors-headed-for-a-tipping-point-on-crypto-apollo-capital",
+      "source": "cointelegraph",
+      "body": "Apollo Capital CIO Henrik Andersson said there will come a point when not investing in crypto will be a “career risk.” ",
+      "tags": "Apollo Capital|Henrik Andersson|institutional investor|institutional investment|fund manager|sentiment",
+      "categories": "Business",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031003",
+      "guid": "https://cointelegraph.com/news/491b-asset-manager-kkr-s-health-care-fund-tokenized-on-avalanche",
+      "published_on": 1663122364,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "$491B asset manager KKR’s health care fund tokenized on Avalanche",
+      "url": "https://cointelegraph.com/news/491b-asset-manager-kkr-s-health-care-fund-tokenized-on-avalanche",
+      "source": "cointelegraph",
+      "body": "To access the fund on the Securitize protocol, investors need to submit their passport, fill out personal and tax information and complete a \"liveness check.\"",
+      "tags": "KKR & Co|Securitize Capital|Health Care Strategic Growth Fund II|Tokenization|Ava Labs|Emin Gün Sirer",
+      "categories": "AVAX|Blockchain|Business|Regulation",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28031001",
+      "guid": "https://cointelegraph.com/news/final-fantasy-creators-join-oasys-blockchain-gamers-whine-about-it",
+      "published_on": 1663121971,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Final Fantasy creators join Oasys blockchain, gamers whine about it",
+      "url": "https://cointelegraph.com/news/final-fantasy-creators-join-oasys-blockchain-gamers-whine-about-it",
+      "source": "cointelegraph",
+      "body": "As part of the deal, Square Enix will develop games on Oasys’ PoS network, joining the likes of Sega, Double Jump, Bandai Namco and Ubisoft. ",
+      "tags": "Square Enix|Square Enix NFTs|Final Fantasy|Oasys blockchain|NFT games|NFT gaming",
+      "categories": "Blockchain",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28030243",
+      "guid": "https://cointelegraph.com/news/linux-to-launch-foundation-to-support-digital-wallet-development",
+      "published_on": 1663106400,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Linux to launch Foundation to support digital wallet development",
+      "url": "https://cointelegraph.com/news/linux-to-launch-foundation-to-support-digital-wallet-development",
+      "source": "cointelegraph",
+      "body": "The foundation apparently does not intend to create its own digital wallet, however. Its' goal is to make it easier for companies to create wallets for themselves.",
+      "tags": "Linux|Wallet|Developers|Foundation",
+      "categories": "ETH",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28030053",
+      "guid": "https://cointelegraph.com/news/swift-and-symbiont-announce-corporate-data-blockchain-pilot",
+      "published_on": 1663105500,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "SWIFT and Symbiont announce corporate data blockchain pilot",
+      "url": "https://cointelegraph.com/news/swift-and-symbiont-announce-corporate-data-blockchain-pilot",
+      "source": "cointelegraph",
+      "body": "The message-system processes over five billion transactions a year and seeks to maintain its relevance by integrating disruptive technologies to its business.",
+      "tags": "Citi|SWIFT|Symbiont",
+      "categories": "Blockchain|Business",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28030006",
+      "guid": "https://cointelegraph.com/news/opennode-sets-up-btc-payment-infrastructure-in-bank-of-bahrain-regulatory-sandbox",
+      "published_on": 1663104900,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "OpenNode sets up BTC payment infrastructure in Bank of Bahrain regulatory sandbox",
+      "url": "https://cointelegraph.com/news/opennode-sets-up-btc-payment-infrastructure-in-bank-of-bahrain-regulatory-sandbox",
+      "source": "cointelegraph",
+      "body": "The kingdom in the Persian Gulf is taking its latest step in transforming its economy away from oil with the Bitcoin and Lightning Network infrastructure provider’s trial.",
+      "tags": "Central Bank|Bitcoin Payments",
+      "categories": "BTC|Commodity|Fiat",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28030001",
+      "guid": "https://cointelegraph.com/news/filecoin-service-provider-announces-move-to-singapore-in-light-of-tightening-restrictions-in-china",
+      "published_on": 1663104532,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Filecoin service provider announces move to Singapore in light of tightening restrictions in China",
+      "url": "https://cointelegraph.com/news/filecoin-service-provider-announces-move-to-singapore-in-light-of-tightening-restrictions-in-china",
+      "source": "cointelegraph",
+      "body": "The service provider also announced the launch of a new system upgrade to increase yield efficiency.",
+      "tags": "Filecoin|Singapore|China",
+      "categories": "Asia|FIL",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28029938",
+      "guid": "https://cointelegraph.com/news/celsius-ceo-plans-to-restructure-firm-to-focus-on-crypto-custody-report",
+      "published_on": 1663103700,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Celsius CEO plans to restructure firm to focus on crypto custody: Report",
+      "url": "https://cointelegraph.com/news/celsius-ceo-plans-to-restructure-firm-to-focus-on-crypto-custody-report",
+      "source": "cointelegraph",
+      "body": "Alex Mashinsky reportedly made the announcement at a Sept. 8 meeting, at which Celsius discussed possible scenarios for its future after filing for bankruptcy in July.",
+      "tags": "business|celsius|lending|cryptocurrencies",
+      "categories": "Business",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28029581",
+      "guid": "https://cointelegraph.com/news/bitcoin-margin-long-to-short-ratio-at-bitfinex-reach-the-highest-level-ever",
+      "published_on": 1663101678,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "Bitcoin margin long-to-short ratio at Bitfinex reach the highest level ever",
+      "url": "https://cointelegraph.com/news/bitcoin-margin-long-to-short-ratio-at-bitfinex-reach-the-highest-level-ever",
+      "source": "cointelegraph",
+      "body": "A key Bitcoin price metric hit a new all-time high, but is this a bullish or bearish development? ",
+      "tags": "markets|margin|leverge|bitfinex|longs|shorts|recession|inflation|liquidations",
+      "categories": "Trading|BTC|Exchange|Market",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28029555",
+      "guid": "https://cointelegraph.com/news/nft-creator-doodles-raises-54m-in-funding-at-704m-valuation",
+      "published_on": 1663100100,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "NFT creator Doodles raises $54M in funding at $704M valuation",
+      "url": "https://cointelegraph.com/news/nft-creator-doodles-raises-54m-in-funding-at-704m-valuation",
+      "source": "cointelegraph",
+      "body": "The firm said it will use the money from the raise to further enhance its intellectual property. ",
+      "tags": "Cryptocurrencies|Doodles",
+      "categories": "ICO",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    },
+    {
+      "id": "28029442",
+      "guid": "https://cointelegraph.com/news/new-regulatory-bill-grants-uruguayan-central-bank-control-over-the-nation-s-crypto-industry",
+      "published_on": 1663097400,
+      "imageurl": "https://images.cryptocompare.com/news/default/cointelegraph.png",
+      "title": "New regulatory bill grants Uruguayan Central Bank control over the nation's crypto industry",
+      "url": "https://cointelegraph.com/news/new-regulatory-bill-grants-uruguayan-central-bank-control-over-the-nation-s-crypto-industry",
+      "source": "cointelegraph",
+      "body": "The Uruguayan government introduced legislation to the parliament on Sep. 5, accelerating industry regulation.",
+      "tags": "Uruguay|Central Bank|Policies",
+      "categories": "Regulation|Fiat",
+      "upvotes": "0",
+      "downvotes": "0",
+      "lang": "EN",
+      "source_info": {
+        "name": "CoinTelegraph",
+        "lang": "EN",
+        "img": "https://images.cryptocompare.com/news/default/cointelegraph.png"
+      }
+    }
+  ],
+  "RateLimit": {},
+  "HasWarning": false
+}
