@@ -8,7 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 
-public interface cryptocompare {
+public interface Cryptocompare {
 
     @GET("data/v2/news/?lang=EN")
     Call<List<News>> getNews(
