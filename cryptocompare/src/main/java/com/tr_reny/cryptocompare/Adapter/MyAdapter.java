@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,13 +25,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.post_item,parent,false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.item_news,parent,false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(postArrayList.get(position).getTitle());
+        holder.title.setText(newsArrayList.get(position).getTitle());
 //        holder.id.setText(postList.get(position).getId());
 //        holder.userId.setText(postList.get(position).getUserId());
         holder.body.setText(postArrayList.get(position).getBody());
@@ -45,6 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
+        TextView title;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
