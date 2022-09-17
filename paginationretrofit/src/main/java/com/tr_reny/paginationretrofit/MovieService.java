@@ -1,4 +1,4 @@
-package com.tr_reny.pagingretrofit;
+package com.tr_reny.paginationretrofit;
 
 import android.graphics.Movie;
 

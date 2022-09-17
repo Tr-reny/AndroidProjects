@@ -1,4 +1,4 @@
-package com.tr_reny.pagingretrofit;
+package com.tr_reny.paginationretrofit;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,7 +10,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.util.ArrayList;
 
-import static com.tr_reny.pagingretrofit.PaginationListener.PAGE_START;
+import static com.tr_reny.paginationretrofit.PaginationListener.PAGE_START;
+
+import com.tr_reny.pagingretrofit.R;
 
 /**
  * Project Created on 4th Sep 2022 by Reny Kipkoech

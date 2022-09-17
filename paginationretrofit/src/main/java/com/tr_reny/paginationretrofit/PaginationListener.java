@@ -1,4 +1,4 @@
-package com.tr_reny.pagingretrofit;
+package com.tr_reny.paginationretrofit;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;

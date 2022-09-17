@@ -1,10 +1,9 @@
-package com.tr_reny.pagingretrofit;
+package com.tr_reny.paginationretrofit;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface JsonPlaceHolderApi {
     //We will parse data from this link https://jsonplaceholder.typicode.com/photos

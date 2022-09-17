@@ -1,4 +1,4 @@
-package com.tr_reny.pagingretrofit;
+package com.tr_reny.paginationretrofit;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.tr_reny.pagingretrofit.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.util.List;

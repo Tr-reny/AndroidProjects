@@ -1,4 +1,4 @@
-package com.tr_reny.pagingretrofit;
+package com.tr_reny.paginationretrofit;
 
 /**
  * BaseViewHolder is a helper class, It responsible for manage multiple view holders in an easier way.

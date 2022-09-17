@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProjects">
         <activity
-            android:name=".MainActivity"
+            android:name="com.tr_reny.paginationretrofit.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
