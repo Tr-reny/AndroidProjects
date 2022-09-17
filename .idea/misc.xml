@@ -24,6 +24,8 @@
         <entry key="okhttprequestexample/src/main/res/layout/activity_main.xml" value="0.44625" />
         <entry key="okhttprequestexample2/src/main/res/layout/activity_main.xml" value="0.44625" />
         <entry key="paginationretrofit/src/main/res/layout/activity_main.xml" value="0.44625" />
+        <entry key="paginationretrofit/src/main/res/layout/item_list.xml" value="0.44375" />
+        <entry key="paginationretrofit/src/main/res/layout/item_loading.xml" value="0.44625" />
         <entry key="pagingretrofit/src/main/res/layout/activity_main.xml" value="0.3781779661016949" />
         <entry key="pagingretrofit/src/main/res/layout/item_image.xml" value="0.44625" />
         <entry key="pagingretrofit/src/main/res/layout/item_loading.xml" value="0.44375" />
