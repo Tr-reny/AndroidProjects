@@ -65,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+
                 List<News> newsList1 = response.body();
+                
                 for (News news : newsList1) {
               /*     String content = "";
                     content += "title: " + news.getTitle() + "\n";
