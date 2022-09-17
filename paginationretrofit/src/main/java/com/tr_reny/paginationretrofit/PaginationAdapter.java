@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.tr_reny.paginationretrofit.Model.Movie;
 import com.tr_reny.pagingretrofit.R;
 
 import java.util.LinkedList;
@@ -21,10 +20,10 @@ import java.util.List;
 
 public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private Context context;
-    private List<Movie> movieList;
     private static final int LOADING = 0;
     private static final int ITEM = 1;
+    private Context context;
+    private List<Movie> movieList;
     private boolean isLoadingAdded = false;
 
     public PaginationAdapter(Context context) {

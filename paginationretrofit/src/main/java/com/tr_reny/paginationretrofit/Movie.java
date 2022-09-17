@@ -1,4 +1,4 @@
-package com.tr_reny.paginationretrofit.Model;
+package com.tr_reny.paginationretrofit;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -10,7 +10,8 @@ public class Movie {
     @SerializedName("image")
     private String imageUrl;
 
-    public Movie(){}
+    public Movie() {
+    }
 
     public Movie(String title, String imageUrl) {
         this.title = title;

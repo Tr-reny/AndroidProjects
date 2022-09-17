@@ -29,10 +29,10 @@ import retrofit2.Response;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private static final int PAGE_START = 1;
     private PaginationAdapter paginationAdapter;
     private MovieService movieService;
     private ProgressBar progressBar;
-    private static final int PAGE_START = 1;
     private boolean isLoading = false;
     private boolean isLastPage = false;
     private int TOTAL_PAGES = 5;
