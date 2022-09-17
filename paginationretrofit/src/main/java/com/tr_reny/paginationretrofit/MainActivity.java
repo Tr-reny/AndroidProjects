@@ -1,18 +1,24 @@
 package com.tr_reny.paginationretrofit;
 
+
+import android.graphics.Movie;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
+import android.widget.ProgressBar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import java.util.ArrayList;
 
-import static com.tr_reny.paginationretrofit.PaginationListener.PAGE_START;
-
+import com.tr_reny.paginationretrofit.Api.ClientApi;
+import com.tr_reny.paginationretrofit.Api.MovieService;
 import com.tr_reny.pagingretrofit.R;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Project Created on 4th Sep 2022 by Reny Kipkoech
@@ -21,99 +27,96 @@ import com.tr_reny.pagingretrofit.R;
  * that time you can use the paging library. This only load small amounts of data from your large data set.
  * It will consume less bandwidth. Also, fewer resources resulting in a smooth app and nice user experience.
  */
+public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
-
-    private static final String TAG = "MainActivity";
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
-    @BindView(R.id.swipeRefresh)
-    SwipeRefreshLayout swipeRefresh;
-    private PostRecyclerAdapter adapter;
-    private int currentPage = PAGE_START;
-    private boolean isLastPage = false;
-    private int totalPage = 10;
+    private PaginationAdapter paginationAdapter;
+    private MovieService movieService;
+    private ProgressBar progressBar;
+    private static final int PAGE_START = 1;
     private boolean isLoading = false;
-    int itemCount = 0;
+    private boolean isLastPage = false;
+    private int TOTAL_PAGES = 5;
+    private int currentPage = PAGE_START;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
-        swipeRefresh.setOnRefreshListener(this);
-        mRecyclerView.setHasFixedSize(true);
-        // use a linear layout manager
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(layoutManager);
-        adapter = new PostRecyclerAdapter(new ArrayList<>());
-        mRecyclerView.setAdapter(adapter);
-        doApiCall();
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        progressBar = findViewById(R.id.progressbar);
 
-        /**
-         * add scroll listener while user reach in bottom load more will call
-         */
-        mRecyclerView.addOnScrollListener(new PaginationListener(layoutManager) {
+        movieService = ClientApi.getClient().create(MovieService.class);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        paginationAdapter = new PaginationAdapter(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(paginationAdapter);
+
+        recyclerView.addOnScrollListener(new PaginationScrollListener(linearLayoutManager) {
             @Override
             protected void loadMoreItems() {
                 isLoading = true;
-                currentPage++;
-                doApiCall();
+                currentPage += 1;
+                loadNextPage();
             }
+
             @Override
             public boolean isLastPage() {
                 return isLastPage;
             }
+
             @Override
             public boolean isLoading() {
                 return isLoading;
             }
         });
 
+        loadFirstPage();
     }
 
+    private void loadNextPage() {
 
-    /**
-     * do api call here to fetch data from server
-     * In example i'm adding data manually
-     */
-    private void doApiCall() {
-        final ArrayList<Photos> items = new ArrayList<>();
-        new Handler().postDelayed(new Runnable() {
+        movieService.getMovies().enqueue(new Callback<List<Movie>>() {
             @Override
-            public void run() {
-                for (int i = 0; i < 10; i++) {
-                    itemCount++;
-
-                    Photos photos = new Photos();
-
-                   photos.setTitle(getString(R.string.text_title) + itemCount);
-                    postItem.setDescription(getString(R.string.text_description));
-                    items.add(photos);
-                }
-                /**
-                 * manage progress view
-                 */
-                if (currentPage != PAGE_START) adapter.removeLoading();
-                adapter.addItems(items);
-                swipeRefresh.setRefreshing(false);
-                // check weather is last page or not
-                if (currentPage < totalPage) {
-                    adapter.addLoading();
-                } else {
-                    isLastPage = true;
-                }
+            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
+                paginationAdapter.removeLoadingFooter();
                 isLoading = false;
+
+
+                List<Movie> results = response.body();
+                paginationAdapter.addAll(results);
+
+                if (currentPage != TOTAL_PAGES) paginationAdapter.addLoadingFooter();
+                else isLastPage = true;
             }
-        }, 1500);
+
+            @Override
+            public void onFailure(Call<List<Movie>> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
     }
-    @Override
-    public void onRefresh() {
-        itemCount = 0;
-        currentPage = PAGE_START;
-        isLastPage = false;
-        adapter.clear();
-        doApiCall();
+
+
+    private void loadFirstPage() {
+
+        movieService.getMovies().enqueue(new Callback<List<Movie>>() {
+            @Override
+            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
+                List<Movie> results = response.body();
+                progressBar.setVisibility(View.GONE);
+                paginationAdapter.addAll(results);
+
+                if (currentPage <= TOTAL_PAGES) paginationAdapter.addLoadingFooter();
+                else isLastPage = true;
+            }
+
+            @Override
+            public void onFailure(Call<List<Movie>> call, Throwable t) {
+
+            }
+
+        });
     }
+
 }

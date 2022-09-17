@@ -139,4 +139,6 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
+
 }
+Footer
