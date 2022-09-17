@@ -1,4 +1,4 @@
-package com.tr_reny.paginationretrofit;
+package com.tr_reny.paginationretrofit.Api;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
