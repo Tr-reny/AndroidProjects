@@ -11,6 +11,20 @@ public class News {
     public RateLimit rateLimit;
     public Boolean hasWarning;
 
+    //constructors
+
+    public News(Integer type, String message, List<Object> promoted, List<Datum> data, RateLimit rateLimit, Boolean hasWarning) {
+        this.type = type;
+        this.message = message;
+        this.promoted = promoted;
+        this.data = data;
+        this.rateLimit = rateLimit;
+        this.hasWarning = hasWarning;
+    }
+
+
+    //getters
+
     public Integer getType() {
         return type;
     }
