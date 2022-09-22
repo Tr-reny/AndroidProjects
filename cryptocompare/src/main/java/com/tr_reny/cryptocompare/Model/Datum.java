@@ -49,4 +49,62 @@ public class Datum {
     @Expose
     public SourceInfo sourceInfo;
 
+
+    //getters
+
+    public String getId() {
+        return id;
+    }
+
+    public String getGuid() {
+        return guid;
+    }
+
+    public Integer getPublishedOn() {
+        return publishedOn;
+    }
+
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public String getCategories() {
+        return categories;
+    }
+
+    public String getUpvotes() {
+        return upvotes;
+    }
+
+    public String getDownvotes() {
+        return downvotes;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public SourceInfo getSourceInfo() {
+        return sourceInfo;
+    }
 }

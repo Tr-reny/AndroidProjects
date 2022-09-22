@@ -27,4 +27,31 @@ public class News {
     @Expose
     public Boolean hasWarning;
 
+
+    //getters
+
+
+    public Integer getType() {
+        return type;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public List<Object> getPromoted() {
+        return promoted;
+    }
+
+    public List<Datum> getData() {
+        return data;
+    }
+
+    public RateLimit getRateLimit() {
+        return rateLimit;
+    }
+
+    public Boolean getHasWarning() {
+        return hasWarning;
+    }
 }
