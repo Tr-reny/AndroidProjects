@@ -1,57 +1,30 @@
 package com.tr_reny.cryptocompare.Model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 public class News {
-    @SerializedName("type")
+
+
+    @SerializedName("Type")
+    @Expose
     public Integer type;
-
-    @SerializedName("message")
+    @SerializedName("Message")
+    @Expose
     public String message;
-
-    @SerializedName("data")
-    public Datum mData;
-
+    @SerializedName("Promoted")
+    @Expose
+    public List<Object> promoted = null;
+    @SerializedName("Data")
+    @Expose
+    public List<Datum> data = null;
+    @SerializedName("RateLimit")
+    @Expose
     public RateLimit rateLimit;
+    @SerializedName("HasWarning")
+    @Expose
     public Boolean hasWarning;
 
-    //constructors
-
-        public News(Integer type, String message, Datum mData, RateLimit rateLimit, Boolean hasWarning) {
-        this.type = type;
-        this.message = message;
-        this.mData = mData;
-        this.rateLimit = rateLimit;
-        this.hasWarning = hasWarning;
-    }
-
-    public News(Integer type) {
-        this.type = type;
-    }
-
-
-    //getters
-
-
-    public Integer getType() {
-        return type;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public Datum getData() {
-        return Data;
-    }
-
-    public RateLimit getRateLimit() {
-        return rateLimit;
-    }
-
-    public Boolean getHasWarning() {
-        return hasWarning;
-    }
 }
