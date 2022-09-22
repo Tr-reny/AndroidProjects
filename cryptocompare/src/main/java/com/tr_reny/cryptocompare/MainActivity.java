@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         newsList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
 
-      String url ="https://min-api.cryptocompare.com/data/v2/news/?lang=EN";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://min-api.cryptocompare.com/data/v2/")
                 .addConverterFactory(GsonConverterFactory.create())

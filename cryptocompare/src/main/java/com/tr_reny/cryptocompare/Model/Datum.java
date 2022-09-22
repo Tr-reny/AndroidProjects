@@ -21,7 +21,27 @@ public class Datum {
     public String lang;
     public SourceInfo sourceInfo;
 
+    //constructor
 
+
+    public Datum(String id, String guid, Integer publishedOn, String imageurl, String title, String url, String msource, String body, String tags, String categories, String upvotes, String downvotes, String lang, SourceInfo sourceInfo) {
+        this.id = id;
+        this.guid = guid;
+        this.publishedOn = publishedOn;
+        this.imageurl = imageurl;
+        this.title = title;
+        this.url = url;
+        this.msource = msource;
+        this.body = body;
+        this.tags = tags;
+        this.categories = categories;
+        this.upvotes = upvotes;
+        this.downvotes = downvotes;
+        this.lang = lang;
+        this.sourceInfo = sourceInfo;
+    }
+
+    //getters
     public String getId() {
         return id;
     }
