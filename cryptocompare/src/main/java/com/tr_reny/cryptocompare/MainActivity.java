@@ -22,11 +22,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    /** Created on 15th Aug 2022 by Reny K.
+    /**
+     * Created on 15th Aug 2022 by Reny K.
      * This is a practise app to test to see if i can Display Api data from
      * https://min-api.cryptocompare.com/
      * as Well as Crypto Market Graphs
-     * */
+     */
 
     private Cryptocompare cryptocompare;
     private List<News> newsList;
@@ -40,39 +41,51 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // tv_results = findViewById(R.id.text_view_results);
+        tv_results = findViewById(R.id.tv_results);
         newsList = new ArrayList<>();
-        recyclerView = findViewById(R.id.recyclerView);
+//        recyclerView = findViewById(R.id.recyclerView);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://min-api.cryptocompare.com/data/v2/")
+                .baseUrl("https://api.jsonserve.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         cryptocompare = retrofit.create(Cryptocompare.class);
+        getNewsT();
 
-        getNews();
+        //  getNews();
     }
 
+/*
     private void getNews() {
-        Call<List<News>> call = cryptocompare.getNews("6b438844ac5cc35f50b52a7d4ee12a897d8b9537ea6141bcb888c1f4b5f8ff46");
+        Call<List<News>> call = cryptocompare.getNewsServe();
         call.enqueue(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Code: " + response.code(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Code: " + response.toString(), Toast.LENGTH_LONG).show();
                     return;
                 }
 
+        */
+/*        String user_name= response.getUsername();
+                user_array= new ArrayList<>(response.getUserArray());
+                Toast.makeText(PrintTicket.this,response.toString(),Toast.LENGTH_SHORT).show();
+            *//*
 
-                List<News> newsList1 = response.body();
-                
+
+
+
+            List<News> newsList1 = response.body();
+
                 for (News news : newsList1) {
-              /*     String content = "";
+              */
+/*     String content = "";
                     content += "title: " + news.getTitle() + "\n";
                     content += "Source: " + news.getMsource() + "\n\n";
 
-                    tv_results.append(content);*/
+                    tv_results.append(content);*//*
+
 
                     newsList.add(news);
                 }
@@ -92,13 +105,47 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+*/
 
-    private void PutDataIntoRecylerView(List<News> newsList) {
+    private void getNewsT() {
+        Call<News> call = cryptocompare.getNewsServe();
+        call.enqueue(new Callback<News>() {
+            @Override
+            public void onResponse(Call<News> call, Response<News> response) {
+                if (!response.isSuccessful()) {
+                    tv_results.setText("Code: " + response.code());
+                    return;
+                }
+
+                News news = response.body();
+                String content = "";
+
+                content += "Code: " + response.code() + "\n";
+                content += "Type: " + news.getType() + "\n";
+
+                content += "title: " + news.getMessage() + "\n";
+            /*    content += "Source: " + response.body().getMessage() + "\n\n";*/
+
+                tv_results.append(content);
+
+        }
+
+        @Override
+        public void onFailure (Call < News > call, Throwable t){
+            tv_results.setText("Error: " + t.getMessage());
+
+        }
+    });
+}
+
+
+
+ /*   private void PutDataIntoRecylerView(List<News> newsList) {
 
         MyAdapter myAdapter = new MyAdapter(this, newsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 
 
-    }
+    }*/
 }

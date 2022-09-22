@@ -34,7 +34,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(newsArrayList.get(position).getMessage());
+       // holder.title.setText(newsArrayList.get(position).getMessage());
+//        holder.source.setText(newsArrayList.get(position).getData().get(position).getTitle());
 //        holder.title.setText(newsArrayList.get(position).data.get(position).getTitle());
 //        holder.id.setText(postList.get(position).getId());
 //        holder.userId.setText(postList.get(position).getUserId());
@@ -50,10 +51,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title;
+        TextView title,source;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            title = itemView.findViewById(R.id.text_view_title);
+            source = itemView.findViewById(R.id.text_view_source);
         }
     }
 }
