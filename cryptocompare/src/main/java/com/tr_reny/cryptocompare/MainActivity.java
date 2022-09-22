@@ -124,19 +124,19 @@ public class MainActivity extends AppCompatActivity {
                 content += "Type: " + news.getType() + "\n";
 
                 content += "title: " + news.getMessage() + "\n";
-            /*    content += "Source: " + response.body().getMessage() + "\n\n";*/
+                /*    content += "Source: " + response.body().getMessage() + "\n\n";*/
 
                 tv_results.append(content);
 
-        }
+            }
 
-        @Override
-        public void onFailure (Call < News > call, Throwable t){
-            tv_results.setText("Error: " + t.getMessage());
+            @Override
+            public void onFailure(Call<News> call, Throwable t) {
+                tv_results.setText("Error: " + t.getMessage());
 
-        }
-    });
-}
+            }
+        });
+    }
 
 
 

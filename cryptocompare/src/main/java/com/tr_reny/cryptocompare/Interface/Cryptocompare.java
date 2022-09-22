@@ -15,7 +15,7 @@ public interface Cryptocompare {
             @Header("Apikey") String apiKey);
 
     //test
-   @GET("ZI9BtX")
-   Call<News> getNewsServe();
+    @GET("ZI9BtX")
+    Call<News> getNewsServe();
 
 }

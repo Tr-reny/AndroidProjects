@@ -28,13 +28,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.item_news,parent,false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.item_news, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-       // holder.title.setText(newsArrayList.get(position).getMessage());
+        // holder.title.setText(newsArrayList.get(position).getMessage());
 //        holder.source.setText(newsArrayList.get(position).getData().get(position).getTitle());
 //        holder.title.setText(newsArrayList.get(position).data.get(position).getTitle());
 //        holder.id.setText(postList.get(position).getId());
@@ -51,7 +51,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title,source;
+        TextView title, source;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
