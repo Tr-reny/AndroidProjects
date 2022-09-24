@@ -34,9 +34,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // holder.title.setText(newsArrayList.get(position).getMessage());
-//        holder.source.setText(newsArrayList.get(position).getData().get(position).getTitle());
+//         holder.title.setText(newsArrayList.get(position).getMessage());
+        holder.source.setText(newsArrayList.get(position).getData().get(0).getTitle());
 //        holder.title.setText(newsArrayList.get(position).data.get(position).getTitle());
+//        holder.title.setText(newsArrayList.get(position).getData().getUrl());
 //        holder.id.setText(postList.get(position).getId());
 //        holder.userId.setText(postList.get(position).getUserId());
 //        holder.body.setText(postArrayList.get(position).getBody());
