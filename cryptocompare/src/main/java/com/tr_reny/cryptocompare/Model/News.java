@@ -1,92 +1,166 @@
 package com.tr_reny.cryptocompare.Model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
+/**
+ * Created by fco on 18-01-18.
+ */
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "id",
+        "guid",
+        "published_on",
+        "imageurl",
+        "title",
+        "url",
+        "source",
+        "body",
+        "tags",
+        "lang",
+        "source_info"
+})
 public class News {
+    @JsonProperty("id")
+    private String id;
+    @JsonProperty("guid")
+    private String guid;
+    @JsonProperty("published_on")
+    private Integer publishedOn;
+    @JsonProperty("imageurl")
+    private String imageurl;
+    @JsonProperty("title")
+    private String title;
+    @JsonProperty("url")
+    private String url;
+    @JsonProperty("source")
+    private String source;
+    @JsonProperty("body")
+    private String body;
+    @JsonProperty("tags")
+    private String tags;
+    @JsonProperty("lang")
+    private String lang;
+    @JsonProperty("source_info")
+    private SourceInfo sourceInfo;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-
-    @SerializedName("Type")
-    @Expose
-    public Integer type;
-    @SerializedName("Message")
-    @Expose
-    public String message;
-    @SerializedName("Promoted")
-    @Expose
-    public List<Object> promoted = null;
-    @SerializedName("Data")
-    @Expose
-    public ArrayList<Datum> data = null;
-    @SerializedName("RateLimit")
-    @Expose
-    public RateLimit rateLimit;
-    @SerializedName("HasWarning")
-    @Expose
-    public Boolean hasWarning;
-
-    //Constructors
-
-    public News(Integer type, String message, List<Object> promoted, ArrayList<Datum> data, RateLimit rateLimit, Boolean hasWarning) {
-        this.type = type;
-        this.message = message;
-        this.promoted = promoted;
-        this.data = data;
-        this.rateLimit = rateLimit;
-        this.hasWarning = hasWarning;
+    public String getId() {
+        return id;
     }
 
-
-    //getters
-
-    public Integer getType() {
-        return type;
+    public News setId(String id) {
+        this.id = id;
+        return this;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public String getGuid() {
+        return guid;
     }
 
-    public String getMessage() {
-        return message;
+    public News setGuid(String guid) {
+        this.guid = guid;
+        return this;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public Integer getPublishedOn() {
+        return publishedOn;
     }
 
-    public List<Object> getPromoted() {
-        return promoted;
+    public News setPublishedOn(Integer publishedOn) {
+        this.publishedOn = publishedOn;
+        return this;
     }
 
-    public void setPromoted(List<Object> promoted) {
-        this.promoted = promoted;
+    public String getImageurl() {
+        return imageurl;
     }
 
-    public ArrayList<Datum> getData() {
-        return data;
+    public News setImageurl(String imageurl) {
+        this.imageurl = imageurl;
+        return this;
     }
 
-    public void setData(ArrayList<Datum> data) {
-        this.data = data;
+    public String getTitle() {
+        return title;
     }
 
-    public RateLimit getRateLimit() {
-        return rateLimit;
+    public News setTitle(String title) {
+        this.title = title;
+        return this;
     }
 
-    public void setRateLimit(RateLimit rateLimit) {
-        this.rateLimit = rateLimit;
+    public String getUrl() {
+        return url;
     }
 
-    public Boolean getHasWarning() {
-        return hasWarning;
+    public News setUrl(String url) {
+        this.url = url;
+        return this;
     }
 
-    public void setHasWarning(Boolean hasWarning) {
-        this.hasWarning = hasWarning;
+    public String getSource() {
+        return source;
+    }
+
+    public News setSource(String source) {
+        this.source = source;
+        return this;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public News setBody(String body) {
+        this.body = body;
+        return this;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public News setTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public News setLang(String lang) {
+        this.lang = lang;
+        return this;
+    }
+
+    public SourceInfo getSourceInfo() {
+        return sourceInfo;
+    }
+
+    public News setSourceInfo(SourceInfo sourceInfo) {
+        this.sourceInfo = sourceInfo;
+        return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public News setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
     }
 }

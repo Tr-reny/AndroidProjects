@@ -19,7 +19,6 @@ public interface Cryptocompare {
 
     //test
     @GET("ZI9BtX")
-
-    Call<News<Datum>> getNewsServe();
+    Call<News> getNewsServe();
 
 }
