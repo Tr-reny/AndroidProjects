@@ -5,12 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tr_reny.cryptocompare.Adapter.MyAdapter;
 import com.tr_reny.cryptocompare.Interface.Cryptocompare;
-import com.tr_reny.cryptocompare.Model.News;
+import com.tr_reny.cryptocompare.Model.Datum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,20 +29,18 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private Cryptocompare cryptocompare;
-    private List<News> newsList;
+    private ArrayList newsList;
     private RecyclerView recyclerView;
 
-
-    private TextView tv_results;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv_results = findViewById(R.id.tv_results);
-        newsList = new ArrayList<>();
-//        recyclerView = findViewById(R.id.recyclerView);
+        // tv_results = findViewById(R.id.tv_results);
+        newsList = new ArrayList();
+        recyclerView = findViewById(R.id.recyclerView);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.jsonserve.com/")
@@ -51,12 +48,81 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         cryptocompare = retrofit.create(Cryptocompare.class);
-        getNewsT();
+//       getNewsT();
 
         //  getNews();
+
+        getData();
+    }
+
+    private void getData() {
+
+        Call<Datum> call = cryptocompare.getNewsServe();
+        call.enqueue(new Callback<Datum>() {
+            @Override
+            public void onResponse(Call<Datum> call, Response<Datum> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Code: " + response.toString(), Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                List<Datum> datum1  = (List<Datum>) response.body();
+                for (Datum datum : datum1){
+
+
+                    newsList.add(datum);
+                }
+
+                PutDataIntoRecylerView(newsList);
+
+            }
+
+            @Override
+            public void onFailure(Call<Datum> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                t.printStackTrace();
+            }
+        });
+
+
+
+
+
+
+
+
+    /*enqueue(new Callback<Datum>() {
+            @Override
+            public void onResponse(Call<News> call, Response<News> response) {
+
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Code: " + response.toString(), Toast.LENGTH_LONG).show();
+                    return;
+                }
+                List<Datum> datalist = response.body().getData();
+                for (int i=0; i<datalist.size(); i++){
+
+                }
+                News news = response.body();
+
+                newsList.add(datalist);
+
+                PutDataIntoRecylerView(newsList);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<News> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                t.printStackTrace();
+
+            }
+        });*/
     }
 
 /*
+
     private void getNews() {
         Call<List<News>> call = cryptocompare.getNewsServe();
         call.enqueue(new Callback<List<News>>() {
@@ -67,25 +133,10 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-        */
-/*        String user_name= response.getUsername();
-                user_array= new ArrayList<>(response.getUserArray());
-                Toast.makeText(PrintTicket.this,response.toString(),Toast.LENGTH_SHORT).show();
-            *//*
-
-
-
 
             List<News> newsList1 = response.body();
 
                 for (News news : newsList1) {
-              */
-/*     String content = "";
-                    content += "title: " + news.getTitle() + "\n";
-                    content += "Source: " + news.getMsource() + "\n\n";
-
-                    tv_results.append(content);*//*
-
 
                     newsList.add(news);
                 }
@@ -107,9 +158,11 @@ public class MainActivity extends AppCompatActivity {
 
 */
 
-    private void getNewsT() {
+
+ /*   private void getNewsT() {
         Call<News> call = cryptocompare.getNewsServe();
         call.enqueue(new Callback<News>() {
+
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
                 if (!response.isSuccessful()) {
@@ -123,8 +176,9 @@ public class MainActivity extends AppCompatActivity {
                 content += "Code: " + response.code() + "\n";
                 content += "Type: " + news.getType() + "\n";
 
-                content += "title: " + news.getMessage() + "\n";
-                /*    content += "Source: " + response.body().getMessage() + "\n\n";*/
+                content += "Message: " + news.getMessage() + "\n";
+                content += "Has warning: " + news.getHasWarning() + "\n\n";
+                *//*    content += "Source: " + response.body().getMessage() + "\n\n";*//*
 
                 tv_results.append(content);
 
@@ -138,14 +192,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+*/
 
-
- /*   private void PutDataIntoRecylerView(List<News> newsList) {
+    private void PutDataIntoRecylerView(List<Datum> newsList) {
 
         MyAdapter myAdapter = new MyAdapter(this, newsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 
 
-    }*/
+    }
+
+
 }

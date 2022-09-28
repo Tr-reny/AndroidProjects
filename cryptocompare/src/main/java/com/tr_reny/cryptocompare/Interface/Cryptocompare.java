@@ -1,5 +1,6 @@
 package com.tr_reny.cryptocompare.Interface;
 
+import com.tr_reny.cryptocompare.Model.Datum;
 import com.tr_reny.cryptocompare.Model.News;
 
 import java.util.List;
@@ -16,6 +17,6 @@ public interface Cryptocompare {
 
     //test
     @GET("ZI9BtX")
-    Call<News> getNewsServe();
+    Call<Datum> getNewsServe();
 
 }

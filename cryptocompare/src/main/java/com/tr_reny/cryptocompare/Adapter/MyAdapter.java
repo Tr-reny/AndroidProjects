@@ -10,17 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tr_reny.cryptocompare.Model.Datum;
-import com.tr_reny.cryptocompare.Model.News;
 import com.tr_reny.cryptocompare.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Context mContext;
-    private List<News> newsArrayList;
+    private List<Datum> newsArrayList;
 
-    public MyAdapter(Context mContext, List<News> newsArrayList) {
+    public MyAdapter(Context mContext, List<Datum> newsArrayList) {
         this.mContext = mContext;
         this.newsArrayList = newsArrayList;
     }
@@ -35,7 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 //         holder.title.setText(newsArrayList.get(position).getMessage());
-        holder.source.setText(newsArrayList.get(position).getData().get(0).getTitle());
+        holder.source.setText(newsArrayList.get(position).getTitle());
 //        holder.title.setText(newsArrayList.get(position).data.get(position).getTitle());
 //        holder.title.setText(newsArrayList.get(position).getData().getUrl());
 //        holder.id.setText(postList.get(position).getId());

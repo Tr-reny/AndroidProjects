@@ -4,7 +4,7 @@ package com.tr_reny.cryptocompare.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Datum{
+public class Datum {
 
     @SerializedName("id")
     @Expose
