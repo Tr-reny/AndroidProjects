@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.google.gson.JsonArray;
 import com.tr_reny.cryptocompare.Adapter.MyAdapter;
 import com.tr_reny.cryptocompare.Interface.Cryptocompare;
 import com.tr_reny.cryptocompare.Model.Datum;
+import com.tr_reny.cryptocompare.Model.News;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,166 +44,14 @@ public class MainActivity extends AppCompatActivity {
         newsList = new ArrayList();
         recyclerView = findViewById(R.id.recyclerView);
 
+        ArrayList<Datum> news_array;
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.jsonserve.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         cryptocompare = retrofit.create(Cryptocompare.class);
-//       getNewsT();
-
-        //  getNews();
-
-        getData();
-    }
-
-    private void getData() {
-
-        Call<Datum> call = cryptocompare.getNewsServe();
-        call.enqueue(new Callback<Datum>() {
-            @Override
-            public void onResponse(Call<Datum> call, Response<Datum> response) {
-                if (!response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Code: " + response.toString(), Toast.LENGTH_LONG).show();
-                    return;
-                }
-
-                List<Datum> datum1  = (List<Datum>) response.body();
-                for (Datum datum : datum1){
-
-
-                    newsList.add(datum);
-                }
-
-                PutDataIntoRecylerView(newsList);
-
-            }
-
-            @Override
-            public void onFailure(Call<Datum> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                t.printStackTrace();
-            }
-        });
-
-
-
-
-
-
-
-
-    /*enqueue(new Callback<Datum>() {
-            @Override
-            public void onResponse(Call<News> call, Response<News> response) {
-
-                if (!response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Code: " + response.toString(), Toast.LENGTH_LONG).show();
-                    return;
-                }
-                List<Datum> datalist = response.body().getData();
-                for (int i=0; i<datalist.size(); i++){
-
-                }
-                News news = response.body();
-
-                newsList.add(datalist);
-
-                PutDataIntoRecylerView(newsList);
-
-
-            }
-
-            @Override
-            public void onFailure(Call<News> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                t.printStackTrace();
-
-            }
-        });*/
-    }
-
-/*
-
-    private void getNews() {
-        Call<List<News>> call = cryptocompare.getNewsServe();
-        call.enqueue(new Callback<List<News>>() {
-            @Override
-            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
-                if (!response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Code: " + response.toString(), Toast.LENGTH_LONG).show();
-                    return;
-                }
-
-
-            List<News> newsList1 = response.body();
-
-                for (News news : newsList1) {
-
-                    newsList.add(news);
-                }
-
-                PutDataIntoRecylerView(newsList);
-
-            }
-
-            @Override
-            public void onFailure(Call<List<News>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                t.printStackTrace();
-
-            }
-        });
-
 
     }
-
-*/
-
-
- /*   private void getNewsT() {
-        Call<News> call = cryptocompare.getNewsServe();
-        call.enqueue(new Callback<News>() {
-
-            @Override
-            public void onResponse(Call<News> call, Response<News> response) {
-                if (!response.isSuccessful()) {
-                    tv_results.setText("Code: " + response.code());
-                    return;
-                }
-
-                News news = response.body();
-                String content = "";
-
-                content += "Code: " + response.code() + "\n";
-                content += "Type: " + news.getType() + "\n";
-
-                content += "Message: " + news.getMessage() + "\n";
-                content += "Has warning: " + news.getHasWarning() + "\n\n";
-                *//*    content += "Source: " + response.body().getMessage() + "\n\n";*//*
-
-                tv_results.append(content);
-
-            }
-
-            @Override
-            public void onFailure(Call<News> call, Throwable t) {
-                tv_results.setText("Error: " + t.getMessage());
-
-            }
-        });
-    }
-
-*/
-
-    private void PutDataIntoRecylerView(List<Datum> newsList) {
-
-        MyAdapter myAdapter = new MyAdapter(this, newsList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(myAdapter);
-
-
-    }
-
-
 }

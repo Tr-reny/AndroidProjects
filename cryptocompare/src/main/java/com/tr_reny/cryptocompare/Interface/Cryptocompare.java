@@ -11,12 +11,15 @@ import retrofit2.http.Header;
 
 public interface Cryptocompare {
 
+/*
     @GET("news/?lang=EN")
     Call<List<News>> getNews(
             @Header("Apikey") String apiKey);
+*/
 
     //test
     @GET("ZI9BtX")
-    Call<Datum> getNewsServe();
+
+    Call<News<Datum>> getNewsServe();
 
 }
