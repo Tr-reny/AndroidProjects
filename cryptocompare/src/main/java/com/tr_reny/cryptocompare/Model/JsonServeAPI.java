@@ -5,10 +5,10 @@ import retrofit2.http.GET;
 
 public interface JsonServeAPI {
 
-//    https://api.jsonserve.com/HCiQ5c
+    //    https://api.jsonserve.com/HCiQ5c
     @GET("HCiQ5c")
     Call<News> getNews();
 
     @GET("HCiQ5c")
-   Call<Data> getData();
+    Call<Data> getData();
 }

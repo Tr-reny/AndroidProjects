@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     private List<News> newsList;
     private List<Data> dataList;
-     private TextView tv_results;
+    private TextView tv_results;
     private JsonServeAPI jsonServeAPI;
-
 
 
     @Override
@@ -56,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
 //    getData();
         getNews();
     }
-    private void getData(){
+
+    private void getData() {
         Call<Data> call = jsonServeAPI.getData();
         call.enqueue(new Callback<Data>() {
             @Override
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void getNews(){
+    private void getNews() {
         Call<News> call = jsonServeAPI.getNews();
         call.enqueue(new Callback<News>() {
             @Override
@@ -105,15 +105,15 @@ public class MainActivity extends AppCompatActivity {
 
                     ArrayList<Data> datas = new ArrayList<Data>(Arrays.asList(response.body().getData()));
 
-                    Log.d(TAG + " getNews ", " onResponse: Type: " + news.getType() + "  message: " + news.getMessage() );
+                    Log.d(TAG + " getNews ", " onResponse: Type: " + news.getType() + "  message: " + news.getMessage());
 
                     for (Data data : datas) {
-                        Log.d(TAG,data.toString());
+                        Log.d(TAG, data.toString());
 
                         String content = "";
                         content += "title: " + data.getTitle() + "\n";
                         content += "Body: " + data.getBody() + "\n";
-                        content += "Source: " + data.getSourceInfo().getName()+ "\n\n";
+                        content += "Source: " + data.getSourceInfo().getName() + "\n\n";
 
 
                         tv_results.append(content);
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<News> call, Throwable t) {
-                tv_results.setText("Error: " +  t.getMessage());
+                tv_results.setText("Error: " + t.getMessage());
                 Log.d(TAG + " getNews ", " onFailure " + " Didn't work " + t.getMessage() + " " + t.getCause() + " \n" + Arrays.toString(t.getStackTrace()));
 
 

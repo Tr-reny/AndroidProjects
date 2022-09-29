@@ -2,6 +2,7 @@ package com.tr_reny.cryptocompare.Model;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -16,15 +17,15 @@ public class News {
     @SerializedName("Promoted")
     @Expose
     public List<Object> promoted = null;
-    @SerializedName("Data")
-    @Expose
-    private Data[] data = null;
     @SerializedName("RateLimit")
     @Expose
     public RateLimit rateLimit;
     @SerializedName("HasWarning")
     @Expose
     public Boolean hasWarning;
+    @SerializedName("Data")
+    @Expose
+    private Data[] data = null;
 
     //Constructor
 
