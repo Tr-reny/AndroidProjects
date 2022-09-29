@@ -7,5 +7,8 @@ public interface JsonServeAPI {
 
 //    https://api.jsonserve.com/HCiQ5c
     @GET("HCiQ5c")
-    Call<News> getnews();
+    Call<News> getNews();
+
+    @GET("HCiQ5c")
+   Call<Data> getData();
 }

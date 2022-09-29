@@ -15,6 +15,17 @@ public class SourceInfo {
     @Expose
     public String img;
 
+    //getter
 
+    public String getName() {
+        return name;
+    }
 
+    public String getLang() {
+        return lang;
+    }
+
+    public String getImg() {
+        return img;
+    }
 }
