@@ -1,4 +1,4 @@
-package com.tr_reny.cryptocompare;
+package com.tr_reny.cryptocompare.Model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
@@ -24,6 +24,18 @@ public class News {
     @SerializedName("HasWarning")
     @Expose
     public Boolean hasWarning;
+
+    //Constructor
+
+    public News(Integer type, String message, List<Object> promoted, List<Datum> data, RateLimit rateLimit, Boolean hasWarning) {
+        this.type = type;
+        this.message = message;
+        this.promoted = promoted;
+        this.data = data;
+        this.rateLimit = rateLimit;
+        this.hasWarning = hasWarning;
+    }
+
 
     //Getters and Setters
 

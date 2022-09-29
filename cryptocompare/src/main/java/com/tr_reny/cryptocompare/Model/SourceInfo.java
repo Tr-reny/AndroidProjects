@@ -1,4 +1,4 @@
-package com.tr_reny.cryptocompare;
+package com.tr_reny.cryptocompare.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
