@@ -47,18 +47,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         dataList = new ArrayList<>();
 
-//        tv_results = findViewById(R.id.tv_results);
+      tv_results = findViewById(R.id.tv_results);
 
         //Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.jsonserve.com/")
+                .baseUrl("https://min-api.cryptocompare.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         jsonServeAPI = retrofit.create(JsonServeAPI.class);
 
 
     //    getNews();
-        getNewsOnRecyclerView();
+      getNewsOnRecyclerView();
 
     }
 
