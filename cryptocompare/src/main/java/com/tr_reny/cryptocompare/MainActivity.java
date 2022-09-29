@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         dataList = new ArrayList<>();
 
-      tv_results = findViewById(R.id.tv_results);
+        tv_results = findViewById(R.id.tv_results);
 
         //Retrofit
         Retrofit retrofit = new Retrofit.Builder()
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         jsonServeAPI = retrofit.create(JsonServeAPI.class);
 
 
-    //    getNews();
-      getNewsOnRecyclerView();
+        //    getNews();
+        getNewsOnRecyclerView();
 
     }
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getNewsOnRecyclerView(){
+    private void getNewsOnRecyclerView() {
         Call<News> call = jsonServeAPI.getNews();
         call.enqueue(new Callback<News>() {
             @Override
@@ -126,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG + " getNews ", " onResponse: Type: " + news.getType() + "  message: " + news.getMessage());
 
 
-
                     for (Data datal : datas) {
                         Log.d(TAG, datal.toString());
 /*
@@ -139,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                         tv_results.append(content);
 
                         */
-                      dataList.add(datal);
+                        dataList.add(datal);
 
                     }
                     PutDataIntoRecylerView(dataList);
@@ -162,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void PutDataIntoRecylerView(ArrayList<Data> dataList) {
 
-        MyAdapter myAdapter = new MyAdapter(this,dataList);
+        MyAdapter myAdapter = new MyAdapter(this, dataList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 

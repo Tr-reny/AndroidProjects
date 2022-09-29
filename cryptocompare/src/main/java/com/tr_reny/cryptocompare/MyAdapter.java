@@ -16,7 +16,7 @@ import com.tr_reny.cryptocompare.Model.News;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private Context mContext;
     private ArrayList<Data> dataList;
@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
         View v;
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        v = layoutInflater.inflate(R.layout.item_news,parent,false);
+        v = layoutInflater.inflate(R.layout.item_news, parent, false);
         return new MyViewHolder(v);
     }
 
@@ -49,17 +49,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         return dataList.size();
     }
 
-    public static class  MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView title;
-       // TextView body;
+        // TextView body;
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-          title  = itemView.findViewById(R.id.text_view_title);
-           //body= itemView.findViewById(R.id.text_view_source);
+            title = itemView.findViewById(R.id.text_view_title);
+            //body= itemView.findViewById(R.id.text_view_source);
 
         }
     }

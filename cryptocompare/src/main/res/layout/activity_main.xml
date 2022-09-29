@@ -6,23 +6,24 @@
     android:layout_height="match_parent"
     android:padding="4dp"
     tools:context=".MainActivity">
-   <TextView
+
+    <TextView
         android:id="@+id/tv_results"
-        android:textSize="18sp"
-        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="gone"
 
-       />
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_news"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
+        tools:listitem="@layout/item_news"
 
         />
 
