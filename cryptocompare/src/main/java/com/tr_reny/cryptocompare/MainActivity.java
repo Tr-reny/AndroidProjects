@@ -8,6 +8,8 @@ import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.tr_reny.cryptocompare.Model.Data;
 import com.tr_reny.cryptocompare.Model.JsonServeAPI;
@@ -15,7 +17,6 @@ import com.tr_reny.cryptocompare.Model.News;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
      * as Well as Crypto Market Graphs
      */
 
-    private List<News> newsList;
-    private List<Data> dataList;
+    private ArrayList<Data> dataList;
     private TextView tv_results;
     private JsonServeAPI jsonServeAPI;
+    private RecyclerView recyclerView;
 
 
     @Override
@@ -43,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv_results = findViewById(R.id.tv_results);
+        recyclerView = findViewById(R.id.recyclerView);
+        dataList = new ArrayList<>();
+
+//        tv_results = findViewById(R.id.tv_results);
 
         //Retrofit
         Retrofit retrofit = new Retrofit.Builder()
@@ -52,43 +56,11 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         jsonServeAPI = retrofit.create(JsonServeAPI.class);
 
-//    getData();
-        getNews();
+
+    //    getNews();
+        getNewsOnRecyclerView();
+
     }
-
-    private void getData() {
-        Call<Data> call = jsonServeAPI.getData();
-        call.enqueue(new Callback<Data>() {
-            @Override
-            public void onResponse(Call<Data> call, Response<Data> response) {
-                if (!response.isSuccessful()) {
-                    tv_results.setText("Code :" + response.code());
-                    return;
-                }
-
-                Data datum = response.body();
-                String content = "";
-
-                content += "Code: " + response.code() + "\n";
-                content += "title: " + datum.getTitle() + "\n";
-                content += "Body: " + datum.getBody() + "\n";
-
-
-                /*    content += "Source: " + response.body().getMessage() + "\n\n";*/
-
-                tv_results.append(content);
-
-
-            }
-
-            @Override
-            public void onFailure(Call<Data> call, Throwable t) {
-                tv_results.setText("Error" + t.getMessage());
-
-            }
-        });
-    }
-
 
     private void getNews() {
         Call<News> call = jsonServeAPI.getNews();
@@ -134,6 +106,65 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void getNewsOnRecyclerView(){
+        Call<News> call = jsonServeAPI.getNews();
+        call.enqueue(new Callback<News>() {
+            @Override
+            public void onResponse(Call<News> call, Response<News> response) {
+
+                if (response.isSuccessful()) {
+
+                    Log.d(TAG, "body to string: " + response.body().getMessage());
+
+                    News news = response.body();
+
+                    ArrayList<Data> datas = new ArrayList<Data>(Arrays.asList(response.body().getData()));
+
+                    Log.d(TAG + " getNews ", " onResponse: Type: " + news.getType() + "  message: " + news.getMessage());
+
+
+
+                    for (Data datal : datas) {
+                        Log.d(TAG, datal.toString());
+/*
+                        String content = "";
+                        content += "title: " + data.getTitle() + "\n";
+                        content += "Body: " + data.getBody() + "\n";
+                        content += "Source: " + data.getSourceInfo().getName() + "\n\n";
+
+
+                        tv_results.append(content);
+
+                        */
+                      dataList.add(datal);
+
+                    }
+                    PutDataIntoRecylerView(dataList);
+
+                } else {
+                    Log.d(TAG + " getNews", " onResponse " + "Error Code " + response.code());
+                }
+            }
+
+
+            @Override
+            public void onFailure(Call<News> call, Throwable t) {
+                Log.d(TAG + " getNews ", " onFailure " + " Didn't work " + t.getMessage() + " " + t.getCause() + " \n" + Arrays.toString(t.getStackTrace()));
+
+
+            }
+        });
+
+    }
+
+    private void PutDataIntoRecylerView(ArrayList<Data> dataList) {
+
+        MyAdapter myAdapter = new MyAdapter(this,dataList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myAdapter);
 
     }
 }
