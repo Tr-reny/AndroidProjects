@@ -1,4 +1,6 @@
-package com.tr_reny.cryptocompare.Model;
+package com.tr_reny.cryptocompare;
+
+import com.tr_reny.cryptocompare.Model.News;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -6,7 +8,7 @@ import retrofit2.http.Header;
 
 public interface JsonServeAPI {
 
-    @GET("news/?lang=EN")
+    @GET("data/v2/news/?lang=EN")
     Call<News> getNewsRealtime(
             @Header("Apikey") String apiKey);
 

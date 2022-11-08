@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tr_reny.cryptocompare.Model.Data;
-import com.tr_reny.cryptocompare.Model.JsonServeAPI;
 import com.tr_reny.cryptocompare.Model.News;
 
 import java.util.ArrayList;
@@ -110,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getNewsOnRecyclerView() {
-        Call<News> call = jsonServeAPI.getNews();
+        Call<News> call = jsonServeAPI.getNewsRealtime("6b438844ac5cc35f50b52a7d4ee12a897d8b9537ea6141bcb888c1f4b5f8ff46");
         call.enqueue(new Callback<News>() {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
@@ -158,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void PutDataIntoRecylerView(ArrayList<Data> dataList) {
 
